@@ -1,15 +1,101 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import React from "react"
+import { ArrowRight } from "react-feather"
+import Link from "next/link"
+
+import skills from "../client-data/skills"
+import Content from "../components/Content"
+import Divider from "../components/Divider"
+import Layout from "../components/Layout"
+import Main from "../components/Main"
+import MessageCycle from "../components/MessageCycle"
+
+import styles from "./about.module.css"
+
+const HeaderAdorner: React.FunctionComponent = () => (
+  <div className={styles.aboutHeaderAdorner}>
+    <div className={styles.aboutHeaderFlyout}>
+      <span>bo </span>
+      <ArrowRight size="14" />
+    </div>
+
+    <img
+      className={styles.aboutHeaderAvatar}
+      src="https://avatars0.githubusercontent.com/u/16605186?s=460&u=56e08ad237910b19b4047e3248ff0179047a3e72&v=4"
+      alt="" />
+  </div>
+)
 
 const AboutPage: React.FunctionComponent = () => (
-  <Layout title="About | Next.js + TypeScript Example">
-    <h1>About</h1>
-    <p>This is the about page</p>
-    <p>
-      <Link href="/">
-        <a>Go home</a>
-      </Link>
-    </p>
+  <Layout title="About | Bo Lingen">
+    <Main>
+      <Content
+        header="about me"
+        className={styles.aboutContent}
+        HeaderAdorner={HeaderAdorner}>
+        <blockquote className={styles.aboutSkills}>
+          <MessageCycle
+            messages={skills}
+            interval={2000}
+            staticPrefix={"I do "}
+            suffix={"."}
+            cursor={"|"} />
+        </blockquote>
+
+        <p>
+          I graduated with a degree in Graphic Communications Management (GCM),
+          which is a print industry triple threat of <span className="italic">graphic design</span>,&thinsp;
+          <span className="italic">communication skills</span>, and&thinsp;
+          <span className="italic">project management</span>. After finishing my degree
+          I started my career in print &amp; mail in the Minneapolis area, and am
+          currently a Variable Data Programmer for&thinsp;
+          <Link href="https://www.seachangemn.com">SeaChange Print Innovations.</Link>
+        </p>
+
+        <p>
+          My career thus far has gotten me shouldered up to print-for-mail and
+          given me opportunities to develop applications, automations, and processes.
+          I am experienced in web design, including the design of email campaigns,
+          and the web languages of HTML, CSS, and JavaScript / TypeScript.
+          I have also become familiar with .NET programming, having developed
+          applications in C#, F#, and PowerShell for various environments &mdash;
+          including command line interfaces, complex desktop applications, and
+          automation workflows.
+        </p>
+
+        <Divider width="25%" />
+
+        <h3>
+          personal
+        </h3>
+
+        <p>
+          I spend most of my time creating things, like programming, writing, or producing
+          music. I’ve written open source libraries and designed websites. I’ve written short
+          stories. I’ve made instrumentals and recorded vocals over a couple dozen musical
+          tracks and explored making film scores.
+        </p>
+
+        <p>
+          I consider my interest and skills in web design to be due, at least in part, to
+          GeoCities websites and MySpace pages.
+        </p>
+
+        <p>
+          I believe in science. I love space and would maybe consider being on the third
+          or fourth trip to Mars.
+        </p>
+
+        <p>
+          Kurt Vonnegut and Stephen King still compete with one another for the title
+          of my favorite author, despite the former’s death in 2007 (although that only
+          counts for those of you living through time linearly).
+        </p>
+
+        <blockquote className={styles.postSignoff}>
+          To HTML’s <code>blink</code> and beyond.
+        </blockquote>
+      </Content>
+    </Main>
   </Layout>
 )
 

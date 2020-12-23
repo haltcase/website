@@ -1,0 +1,9 @@
+{
+  "eslint.enable": true,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": false,
+  "eslint.options": {
+    "parser": null
+  }
+}

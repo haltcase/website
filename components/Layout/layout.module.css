@@ -1,0 +1,200 @@
+.header {
+  z-index: 99999;
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  width: 100%;
+  height: var(--size-header);
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  line-height: var(--size-header);
+  justify-content: space-between;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.navLeft {
+  max-width: 50%;
+}
+
+.navRight {
+  padding-right: 2rem;
+  display: flex;
+}
+
+.logoContainer {
+  padding: 0 2rem;
+  border-bottom: none;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logoContainer:not(:last-child) {
+  border-right: solid 1px var(--color-border);
+}
+
+.logoContainer:hover {
+  color: var(--color-primary);
+}
+
+.logoContainer img {
+  margin-right: 1rem;
+  border-radius: 50%;
+  height: 100%;
+}
+
+.navLink {
+  padding: 0 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02rem;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+  text-transform: lowercase;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  width: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.navLinkActive::after {
+  opacity: 0.5;
+  width: 50%;
+  left: 25%;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.navLink:hover::after {
+  opacity: 1;
+  width: 90%;
+  left: 5%;
+}
+
+.navLeft .navLink:not(:last-child) {
+  /* border-right: solid 1px var(--color-border); */
+}
+
+.navRight .navLink:not(:first-child) {
+  /* border-left: solid 1px var(--color-border); */
+}
+
+.navLinkBefore {
+  width: 0;
+  margin-top: 0.1rem;
+}
+
+.navLinkBefore svg {
+  opacity: 0;
+  color: var(--color-primary);
+  transform: scaleX(0);
+  transform: translateX(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.navLink:hover .navLinkBefore svg {
+  opacity: 1;
+  transform: scaleX(1);
+  transform: translateX(-100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.navLinkText {
+  display: inline-block;
+  font-weight: 400;
+}
+
+a.navLink:hover {
+  text-decoration: solid 2px var(--color-primary);
+}
+
+.navMenu {
+  --size-padding: calc(var(--size-header) / 4);
+  margin-left: 0.5rem;
+  padding-left: var(--size-padding);
+  padding-right: var(--size-padding);
+  height: var(--size-header);
+  display: none;
+  cursor: pointer;
+}
+
+.navMenu:hover {
+  color: var(--color-primary);
+}
+
+.navMenu svg {
+  transform: translateY(0.25rem);
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    display: block;
+    height: var(--size-header);
+    overflow: hidden;
+  }
+
+  .header.open {
+    height: fit-content;
+  }
+
+  .navLeft {
+    /* width: 100%; */
+    height: var(--size-header);
+  }
+
+  .navLeft .logoContainer {
+    border-right: none;
+  }
+
+  .logoContainer img {
+    max-height: var(--size-header);
+  }
+
+  .navLeft .navLink {
+    width: 100%;
+    display: block;
+    background-color: var(--color-bg-lighter)
+  }
+
+  .navLinkActive::after {
+    width: 45%;
+    left: 5%;
+  }
+
+  .navRight {
+    margin-top: 1rem;
+    display: block;
+  }
+
+  .navRight .navLink {
+    display: block;
+    width: 100%;
+  }
+
+  .navMenu {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    display: inline-block;
+  }
+}
