@@ -11,7 +11,7 @@ interface Props {
   HeaderAdorner?: React.FunctionComponent
 }
 
-const IndexPage: React.FunctionComponent<Props> = ({
+const Content: React.FunctionComponent<Props> = ({
   children,
   header,
   HeaderAdorner,
@@ -33,4 +33,4 @@ const IndexPage: React.FunctionComponent<Props> = ({
   </section>
 )
 
-export default IndexPage
+export default Content
