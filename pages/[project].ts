@@ -18,6 +18,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
   }
 }
 
-export default (): null => {
-  return null
-}
+const NullPage = (): null => null
+
+export default NullPage
