@@ -19,7 +19,7 @@ const ContactPage: React.FunctionComponent = () => (
 
           <li>
             <span>Send a message on</span>
-            <Link href="www.linkedin.com/in/bo-lingen"><a>LinkedIn</a></Link>
+            <Link href="https://www.linkedin.com/in/bo-lingen"><a>LinkedIn</a></Link>
           </li>
 
           <li>
