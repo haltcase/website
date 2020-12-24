@@ -1,24 +1,37 @@
 import React from "react"
 import Link from "next/link"
 
-import ContactForm from "../components/ContactForm"
 import Content from "../components/Content"
 import Layout from "../components/Layout"
 import Main from "../components/Main"
+
+import styles from "./contact.module.css"
 
 const ContactPage: React.FunctionComponent = () => (
   <Layout title="Contact | Bo Lingen">
     <Main>
       <Content header="contact">
-        <p>
-          If you’d like to contact me, you can use the form below to send me
-          a message directly.
+        <ul className={styles.contactList}>
+          <li>
+            <span>Email me at</span>
+            <Link href="mailto:bo@lingen.life"><a>bo@lingen.life</a></Link>
+          </li>
 
-          You can also reach me through <Link href="mailto:bo@lingen.life"><a>email</a></Link>
-          &thinsp;or on <Link href="https://twitter.com/ctycde"><a>Twitter</a></Link>.
-        </p>
+          <li>
+            <span>Send a message on</span>
+            <Link href="www.linkedin.com/in/bo-lingen"><a>LinkedIn</a></Link>
+          </li>
 
-        <ContactForm />
+          <li>
+            <span>Reach out on</span>
+            <Link href="https://twitter.com/ctycde"><a>Twitter</a></Link>
+          </li>
+
+          <li>
+            <span>Follow on</span>
+            <Link href="https://github.com/citycide"><a>GitHub</a></Link>
+          </li>
+        </ul>
       </Content>
     </Main>
   </Layout>
