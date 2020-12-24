@@ -2,6 +2,7 @@ import React from "react"
 import { Code, Globe, Star } from "react-feather"
 import { GetServerSideProps } from "next"
 import Link from "next/link"
+import fetch from "isomorphic-unfetch"
 
 import Content from "../components/Content"
 import IconLink from "../components/IconLink"
