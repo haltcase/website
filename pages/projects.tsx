@@ -50,7 +50,9 @@ const selectedProjects = {
       <p>
         Plugin for the Babel JavaScript compiler to add semi-syntactic
         partial application and lambda parameters, inspired by similar
-        features in Scala &amp; Kotlin.
+        features in Scala &amp; Kotlin. I designed an&thinsp;
+        <Link href="https://param-macro.bolingen.me"><a>online playground</a></Link>
+        &thinsp;for users to quickly experiment with the libary online.
       </p>
     )
   },
