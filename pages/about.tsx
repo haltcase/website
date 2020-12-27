@@ -20,8 +20,7 @@ const HeaderAdorner: React.FunctionComponent = () => (
 
     <img
       className={styles.aboutHeaderAvatar}
-      src="https://avatars0.githubusercontent.com/u/16605186?s=460&u=56e08ad237910b19b4047e3248ff0179047a3e72&v=4"
-      alt="" />
+      src="/avatar.jpg" />
   </div>
 )
 

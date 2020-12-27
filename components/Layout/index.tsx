@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { ChevronRight, Menu, X } from "react-feather"
 import classes from "clsx"
-import Link from "next/link"
 import Head from "next/head"
+import Link from "next/link"
 import { useRouter } from "next/router"
 
 import links from "../../client-data/nav-links"
@@ -56,9 +56,8 @@ const Layout: React.FunctionComponent<Props> = ({
           <Link href="/">
             <a className={styles.logoContainer} title="Home">
               <img
-                className={styles.aboutHeaderAvatar}
-                src="https://avatars0.githubusercontent.com/u/16605186?s=460&u=56e08ad237910b19b4047e3248ff0179047a3e72&v=4"
-                alt="" />
+                className={styles.logoImage}
+                src="/avatar.jpg" />
               <span>bo lingen</span>
             </a>
           </Link>
