@@ -14,7 +14,7 @@ import styles from "./about.module.css"
 const HeaderAdorner: React.FunctionComponent = () => (
   <div className={styles.aboutHeaderAdorner}>
     <div className={styles.aboutHeaderFlyout}>
-      <span>bo </span>
+      <span>bo</span>
       <ArrowRight size="14" />
     </div>
 
@@ -31,14 +31,14 @@ const AboutPage: React.FunctionComponent = () => (
         header="about me"
         className={styles.aboutContent}
         HeaderAdorner={HeaderAdorner}>
-        <blockquote className={styles.aboutSkills}>
+        <p className={styles.aboutSkills}>
           <MessageCycle
             messages={skills}
             interval={2000}
             staticPrefix={"I do "}
             suffix={"."}
             cursor={"|"} />
-        </blockquote>
+        </p>
 
         <p>
           I graduated with a degree in Graphic Communications Management (GCM),
