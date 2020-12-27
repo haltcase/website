@@ -1,0 +1,18 @@
+.content {
+  background-color: initial;
+  border: initial;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+.errorBody {
+  text-align: center;
+}
+
+.returnButton {
+  margin-top: 2rem;
+  display: block;
+}
