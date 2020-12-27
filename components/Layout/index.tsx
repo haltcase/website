@@ -50,7 +50,6 @@ const Layout: React.FunctionComponent<Props> = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="theme-color" content="rgb(51, 95, 112)" />
-        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <header className={classes(styles.header, isOpen && styles.open)}>
         <nav className={styles.navLeft}>
