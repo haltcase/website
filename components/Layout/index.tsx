@@ -50,6 +50,8 @@ const Layout: React.FunctionComponent<Props> = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="theme-color" content="rgb(51, 95, 112)" />
+        <link rel="webmention" href="https://webmention.io/bolingen.me/webmention" />
+        <link rel="pingback" href="https://webmention.io/bolingen.me/xmlrpc" />
       </Head>
       <header className={classes(styles.header, isOpen && styles.open)}>
         <nav className={styles.navLeft}>
