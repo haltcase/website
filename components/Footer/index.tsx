@@ -15,7 +15,7 @@ const Footer: React.FunctionComponent = () => (
         {
           socialLinks.map(link =>
             <li key={link.href}>
-              <IconLink {...link} />
+              <IconLink {...link} rel="me noopener" target="_blank" />
             </li>
           )
         }

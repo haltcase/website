@@ -9,16 +9,20 @@ interface Props {
   Icon: SimpleIcon | FeatherIcon
   title?: string
   size?: string
+  rel?: string
+  target?: string
 }
 
 const IconLink: React.FunctionComponent<Props> = ({
   href,
   Icon,
   title = "",
-  size = "18"
+  size = "18",
+  rel = "",
+  target = ""
 }) =>
   <Link href={href}>
-    <a className="icon" title={title}>
+    <a className="icon" title={title} rel={rel} target={target}>
       <Icon size={size} />
     </a>
   </Link>
