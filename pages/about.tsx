@@ -90,6 +90,18 @@ const AboutPage: React.FunctionComponent = () => (
           counts for those of you living through time linearly).
         </p>
 
+        <Divider width="25%" />
+
+        <h3>
+          this site
+        </h3>
+
+        <p>
+          This site was designed from scratch by hand, rather than using any templates.
+          It’s written in TypeScript, uses React, is powered by Next.js, and is hosted
+          by Vercel.
+        </p>
+
         <blockquote className={styles.postSignoff}>
           To HTML’s <code>blink</code> and beyond.
         </blockquote>
