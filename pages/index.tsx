@@ -63,7 +63,7 @@ const IndexPage: React.FunctionComponent = () => (
         </h4>
 
         <p>
-          I am a Variable Data Programmer at&thinsp;
+          I am the Data Services Manager and an engineer on the GATHER platform at&thinsp;
           <Link href="https://www.seachangemn.com">SeaChange Print Innovations</Link>
           &thinsp;by day, and a developer by night. Well, also day. Extending into the night.
           Please feel free to <Link href="/about"><a>read more about me</a></Link>,&thinsp;

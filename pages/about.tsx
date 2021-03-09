@@ -46,7 +46,7 @@ const AboutPage: React.FunctionComponent = () => (
           <span className="italic">communication skills</span>, and&thinsp;
           <span className="italic">project management</span>. After finishing my degree
           I started my career in print &amp; mail in the Minneapolis area, and am
-          currently a Variable Data Programmer for&thinsp;
+          currently the Data Services Manager and an engineer on the GATHER platform for&thinsp;
           <Link href="https://www.seachangemn.com">SeaChange Print Innovations.</Link>
         </p>
 
