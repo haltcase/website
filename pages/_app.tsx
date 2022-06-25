@@ -1,8 +1,9 @@
 import "./styles.css";
 
 import { AppProps } from "next/app";
+import { FunctionComponent } from "react";
 
-const App = ({ Component, pageProps }: AppProps): JSX.Element => {
+const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
 	return <Component {...pageProps} />;
 };
 

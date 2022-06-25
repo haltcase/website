@@ -1,4 +1,4 @@
-import React from "react";
+import { FunctionComponent } from "react";
 import { Code } from "react-feather";
 
 import socialLinks from "../../client-data/social-links";
@@ -8,7 +8,7 @@ import styles from "./footer.module.css";
 const getCopyrightDate = (currentYear: number): string =>
 	currentYear === 2020 ? "2020" : `2020-${currentYear}`;
 
-const Footer: React.FunctionComponent = () => (
+const Footer: FunctionComponent = () => (
 	<footer className={styles.footer}>
 		<div>
 			<ul className={styles.iconList}>

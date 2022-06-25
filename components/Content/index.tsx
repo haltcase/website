@@ -24,7 +24,7 @@ const DefaultHeader: FunctionComponent<HeaderProps> = ({
 	</div>
 );
 
-const Content: FunctionComponent<HeaderProps> = ({
+const Content: FunctionComponent<PropsWithChildren<HeaderProps>> = ({
 	children,
 	Header,
 	HeaderAdorner,

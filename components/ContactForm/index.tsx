@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import { ChangeEvent, FunctionComponent, useState } from "react";
 
 import styles from "./contact-form.module.css";
 
@@ -12,7 +12,7 @@ const validators = {
 	message: (value: string) => value.length > 1
 };
 
-const ContactForm = (): JSX.Element => {
+const ContactForm: FunctionComponent = () => {
 	const router = useRouter();
 
 	const [name, setName] = useState("");
@@ -28,7 +28,7 @@ const ContactForm = (): JSX.Element => {
 
 	const updateField =
 		(field: "name" | "email" | "message") =>
-		(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 			const { value } = event.target;
 			actions[field](value);
 

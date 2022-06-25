@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import { FunctionComponent } from "react";
 import { ArrowRight } from "react-feather";
 
 import skills from "../client-data/skills";
@@ -10,7 +10,7 @@ import Main from "../components/Main";
 import MessageCycle from "../components/MessageCycle";
 import styles from "./about.module.css";
 
-const HeaderAdorner: React.FunctionComponent = () => (
+const HeaderAdorner: FunctionComponent = () => (
 	<div className={styles.aboutHeaderAdorner}>
 		<div className={styles.aboutHeaderFlyout}>
 			<span>bo</span>
@@ -21,7 +21,7 @@ const HeaderAdorner: React.FunctionComponent = () => (
 	</div>
 );
 
-const AboutPage: React.FunctionComponent = () => (
+const AboutPage: FunctionComponent = () => (
 	<Layout title="About | Bo Lingen">
 		<Main>
 			<Content

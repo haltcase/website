@@ -1,12 +1,12 @@
 import Link from "next/link";
-import React from "react";
+import { FunctionComponent } from "react";
 
 import Content from "../components/Content";
 import Layout from "../components/Layout";
 import Main from "../components/Main";
 import styles from "./404.module.css";
 
-const NotFoundPage: React.FunctionComponent = () => (
+const NotFoundPage: FunctionComponent = () => (
 	<Layout title="Bo Lingen">
 		<Main>
 			<Content

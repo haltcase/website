@@ -1,6 +1,6 @@
 import { Icon as SimpleIcon } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
-import React from "react";
+import { FunctionComponent } from "react";
 import { Icon as FeatherIcon } from "react-feather";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 	target?: string;
 }
 
-const IconLink: React.FunctionComponent<Props> = ({
+const IconLink: FunctionComponent<Props> = ({
 	href,
 	Icon,
 	title = "",

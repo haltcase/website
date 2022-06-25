@@ -2,7 +2,7 @@ import classes from "clsx";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { PropsWithChildren, useState } from "react";
+import { FunctionComponent, PropsWithChildren, useState } from "react";
 import { ChevronRight, Menu, X } from "react-feather";
 
 import links from "../../client-data/nav-links";
@@ -19,7 +19,7 @@ interface NavLinkProps {
 	target: string;
 }
 
-const NavLink: React.FunctionComponent<NavLinkProps> = ({ text, target }) => {
+const NavLink: FunctionComponent<NavLinkProps> = ({ text, target }) => {
 	const router = useRouter();
 
 	return (
@@ -38,7 +38,7 @@ const NavLink: React.FunctionComponent<NavLinkProps> = ({ text, target }) => {
 	);
 };
 
-const Layout: React.FunctionComponent<Props> = ({
+const Layout: FunctionComponent<Props> = ({
 	children,
 	title = "bolingen.me",
 	metaTitle = ""

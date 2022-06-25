@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import { FunctionComponent } from "react";
 
 import socialLinks from "../client-data/social-links";
 import Content from "../components/Content";
@@ -10,7 +10,7 @@ import styles from "./index.module.css";
 
 const actions = ["program", "design", "improve", "automate"];
 
-const IndexPage: React.FunctionComponent = () => (
+const IndexPage: FunctionComponent = () => (
 	<Layout title="Bo Lingen">
 		<Main>
 			<section className={styles.sidebar} style={{ display: "none" }}>

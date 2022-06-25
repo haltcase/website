@@ -1,7 +1,7 @@
 import fetch from "isomorphic-unfetch";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
-import React from "react";
+import { FunctionComponent } from "react";
 import { Code, Globe, Star } from "react-feather";
 
 import socialLinks from "../client-data/social-links";
@@ -170,9 +170,7 @@ interface ProjectListingProps {
 	repo: Repository;
 }
 
-const ProjectListing: React.FunctionComponent<ProjectListingProps> = ({
-	repo
-}) => {
+const ProjectListing: FunctionComponent<ProjectListingProps> = ({ repo }) => {
 	return (
 		<section className={styles.projectListing}>
 			<h3 className={styles.projectListingHeader}>
@@ -208,9 +206,7 @@ interface ProjectPageProps {
 	repos: Repository[];
 }
 
-const ProjectPage: React.FunctionComponent<ProjectPageProps> = ({
-	repos = []
-}) => (
+const ProjectPage: FunctionComponent<ProjectPageProps> = ({ repos = [] }) => (
 	<Layout title="Projects | Bo Lingen">
 		<Main>
 			<Content Header="projects">

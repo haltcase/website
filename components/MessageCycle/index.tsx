@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import {
+	FunctionComponent,
+	MutableRefObject,
+	useEffect,
+	useRef,
+	useState
+} from "react";
 
 export interface MessageData {
 	text: string;
@@ -42,7 +48,7 @@ const getMessage = (messageOrData: string | MessageData): string =>
 const getLinkTarget = (messageOrData: string | MessageData): string =>
 	typeof messageOrData === "string" ? "#" : messageOrData.href ?? "#";
 
-const SkillCycle: React.FunctionComponent<Props> = ({
+const SkillCycle: FunctionComponent<Props> = ({
 	messages = [],
 	interval = 2000,
 	prefix = "",
@@ -64,8 +70,7 @@ const SkillCycle: React.FunctionComponent<Props> = ({
 	const [speed, setSpeed] = useState(typingSpeed);
 	const [loop, setLoop] = useState(0);
 
-	const innerTimer: React.MutableRefObject<NodeJS.Timeout | undefined> =
-		useRef();
+	const innerTimer: MutableRefObject<NodeJS.Timeout | undefined> = useRef();
 
 	const index = loop % messages.length;
 	const linkTarget = getLinkTarget(messages[index]);
