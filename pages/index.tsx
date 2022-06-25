@@ -15,11 +15,7 @@ const IndexPage: FunctionComponent = () => (
 		<Main>
 			<section className={styles.sidebar} style={{ display: "none" }}>
 				<section className={styles.intro}>
-					<img
-						className={styles.introAvatar}
-						src="https://avatars0.githubusercontent.com/u/16605186?s=460&u=56e08ad237910b19b4047e3248ff0179047a3e72&v=4"
-						alt=""
-					/>
+					<img className={styles.introAvatar} src="/avatar.jpg" alt="" />
 
 					<h2 className={styles.introName}>Bo Lingen</h2>
 
