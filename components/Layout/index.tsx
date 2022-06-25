@@ -40,7 +40,8 @@ const NavLink: React.FunctionComponent<NavLinkProps> = ({ text, target }) => {
 
 const Layout: React.FunctionComponent<Props> = ({
 	children,
-	title = "bolingen.me"
+	title = "bolingen.me",
+	metaTitle = ""
 }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -53,6 +54,7 @@ const Layout: React.FunctionComponent<Props> = ({
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta name="theme-color" content="rgb(51, 95, 112)" />
+				{metaTitle !== "" && <meta property="og:title" content={metaTitle} />}
 				<link
 					rel="webmention"
 					href="https://webmention.io/bolingen.me/webmention"
