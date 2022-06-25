@@ -3,7 +3,8 @@ import type { Icon as FeatherIcon } from "react-feather"
 
 import {
   Github,
-  Twitter
+  Twitter,
+  Linkedin
 } from "@icons-pack/react-simple-icons"
 
 import {
@@ -13,13 +14,15 @@ import {
 interface SocialLink {
   href: string
   Icon: SimpleIcon | FeatherIcon
-  title?: string
+  callout?: string
+  display?: string
 }
 
-const socialLinks: SocialLink[] = [
-  { href: "https://github.com/citycide", Icon: Github },
-  { href: "https://twitter.com/ctycde", Icon: Twitter },
-  { href: "mailto:bo@lingen.life", Icon: Mail, title: "Email" }
-]
+const socialLinks: Readonly<Record<string, SocialLink>> = Object.freeze({
+  GitHub: { href: "https://github.com/haltcase", Icon: Github, callout: "Follow on" },
+  Twitter: { href: "https://twitter.com/haltcase", Icon: Twitter, callout: "Reach out on" },
+  Email: { href: "mailto:bo@lingen.life", Icon: Mail, callout: "Email me at", display: "bo@lingen.life" },
+  LinkedIn: { href: "https://www.linkedin.com/in/bo-lingen", Icon: Linkedin, callout: "Send a message on" }
+})
 
 export default socialLinks

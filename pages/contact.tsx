@@ -4,33 +4,23 @@ import Link from "next/link"
 import Content from "../components/Content"
 import Layout from "../components/Layout"
 import Main from "../components/Main"
+import socialLinks from "../client-data/social-links"
 
 import styles from "./contact.module.css"
 
 const ContactPage: React.FunctionComponent = () => (
   <Layout title="Contact | Bo Lingen">
     <Main>
-      <Content header="contact">
+      <Content Header="contact">
         <ul className={styles.contactList}>
-          <li>
-            <span>Email me at</span>
-            <Link href="mailto:bo@lingen.life"><a>bo@lingen.life</a></Link>
-          </li>
-
-          <li>
-            <span>Send a message on</span>
-            <Link href="https://www.linkedin.com/in/bo-lingen"><a>LinkedIn</a></Link>
-          </li>
-
-          <li>
-            <span>Reach out on</span>
-            <Link href="https://twitter.com/ctycde"><a>Twitter</a></Link>
-          </li>
-
-          <li>
-            <span>Follow on</span>
-            <Link href="https://github.com/citycide"><a>GitHub</a></Link>
-          </li>
+          {
+            Object.entries(socialLinks).map(([title, link]) =>
+              <li key={link.href}>
+                <span>{link.callout}</span>
+                <Link href={link.href}>{link.display ?? title}</Link>
+              </li>
+            )
+          }
         </ul>
       </Content>
     </Main>

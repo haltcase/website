@@ -8,6 +8,7 @@ import Content from "../components/Content"
 import IconLink from "../components/IconLink"
 import Layout from "../components/Layout"
 import Main from "../components/Main"
+import socialLinks from "../client-data/social-links"
 
 import styles from "./projects.module.css"
 
@@ -195,7 +196,7 @@ const ProjectPage: React.FunctionComponent<ProjectPageProps> = ({
       <Content header="projects">
         <p className="italic textSmall">
           For a full list of my programming projects, please visit my&thinsp;
-          <Link href="https://github.com/citycide">GitHub profile</Link>.
+          <Link href={socialLinks.GitHub.href}>GitHub profile</Link>.
         </p>
 
         {

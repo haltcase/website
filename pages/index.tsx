@@ -5,6 +5,7 @@ import Content from "../components/Content"
 import Layout from "../components/Layout"
 import Main from "../components/Main"
 import MessageCycle from "../components/MessageCycle"
+import socialLinks from "../client-data/social-links"
 
 import styles from "./index.module.css"
 
@@ -28,7 +29,7 @@ const IndexPage: React.FunctionComponent = () => (
           <h2 className={styles.introName}>Bo Lingen</h2>
 
           <p className={styles.introContact}>
-            <a href="mailto:bo@lingen.life">bo@lingen.life</a>
+            <a href={socialLinks.Email.href}>{socialLinks.Email.display}</a>
           </p>
 
           <section className={styles.introSummary}>

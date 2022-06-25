@@ -13,9 +13,9 @@ const Footer: React.FunctionComponent = () => (
     <div>
       <ul className={styles.iconList}>
         {
-          socialLinks.map(link =>
+          Object.entries(socialLinks).map(([title, link]) =>
             <li key={link.href}>
-              <IconLink {...link} rel="me noopener" target="_blank" />
+              <IconLink {...link} title={title} rel="me noopener" target="_blank" />
             </li>
           )
         }
