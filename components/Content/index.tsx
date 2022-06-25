@@ -1,18 +1,18 @@
 import classes from "clsx";
-import React from "react";
+import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
 
 import Divider from "../Divider";
 import styles from "./content.module.css";
 
-export interface HeaderProps {
-	Header: string | React.ReactNode;
+export interface HeaderProps extends PropsWithChildren {
+	Header: string | ReactNode;
 	isSeamless?: boolean;
 	className?: string;
 	headerClassName?: string;
-	HeaderAdorner?: React.ReactNode;
+	HeaderAdorner?: ReactNode;
 }
 
-const DefaultHeader: React.FunctionComponent<HeaderProps> = ({
+const DefaultHeader: FunctionComponent<HeaderProps> = ({
 	Header,
 	headerClassName = "",
 	HeaderAdorner
@@ -24,7 +24,7 @@ const DefaultHeader: React.FunctionComponent<HeaderProps> = ({
 	</div>
 );
 
-const Content: React.FunctionComponent<HeaderProps> = ({
+const Content: FunctionComponent<HeaderProps> = ({
 	children,
 	Header,
 	HeaderAdorner,

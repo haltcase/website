@@ -2,14 +2,14 @@ import classes from "clsx";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import { ChevronRight, Menu, X } from "react-feather";
 
 import links from "../../client-data/nav-links";
 import Footer from "../../components/Footer";
 import styles from "./layout.module.css";
 
-interface Props {
+interface Props extends PropsWithChildren {
 	title?: string;
 	metaTitle?: string;
 }
