@@ -28,7 +28,7 @@ const Footer: React.FunctionComponent = () => (
       <ul className={styles.iconList}>
         <li>
           <IconLink
-            href="https://github.com/citycide/website"
+            href="https://github.com/haltcase/website"
             Icon={Code}
             title="Source at GitHub" />
         </li>
