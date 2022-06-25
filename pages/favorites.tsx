@@ -8,7 +8,7 @@ import Main from "../components/Main"
 const ProjectPage: React.FunctionComponent = () => (
   <Layout title="Favorites | Bo Lingen">
     <Main>
-      <Content header="favorites">
+      <Content Header="favorites">
         <ul style={{ listStyle: "none" }}>
           <li>
             <icons.DotNet />

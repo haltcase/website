@@ -11,7 +11,7 @@ const NotFoundPage: React.FunctionComponent = () => (
   <Layout title="Bo Lingen">
     <Main>
       <Content
-        header="404"
+        Header="404"
         className={styles.content}
         headerClassName={styles.header}>
         <p className={styles.errorBody}>

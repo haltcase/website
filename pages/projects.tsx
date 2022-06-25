@@ -193,7 +193,7 @@ const ProjectPage: React.FunctionComponent<ProjectPageProps> = ({
 }) => (
   <Layout title="Projects | Bo Lingen">
     <Main>
-      <Content header="projects">
+      <Content Header="projects">
         <p className="italic textSmall">
           For a full list of my programming projects, please visit my&thinsp;
           <Link href={socialLinks.GitHub.href}>GitHub profile</Link>.

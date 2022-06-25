@@ -28,9 +28,9 @@ const AboutPage: React.FunctionComponent = () => (
   <Layout title="About | Bo Lingen">
     <Main>
       <Content
-        header="about me"
+        Header="about me"
         className={styles.aboutContent}
-        HeaderAdorner={HeaderAdorner}>
+        HeaderAdorner={<HeaderAdorner />}>
         <p className={styles.aboutSkills}>
           <MessageCycle
             messages={skills}

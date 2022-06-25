@@ -6,6 +6,11 @@
   margin: 0 auto;
 }
 
+.contentSeamless {
+  border: initial;
+  background-color: initial;
+}
+
 .content .container {
   padding: 1rem 2rem;
 }

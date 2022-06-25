@@ -53,7 +53,7 @@ const IndexPage: React.FunctionComponent = () => (
       </section>
 
       <Content
-        header="hello &mdash; my name is bo"
+        Header="hello &mdash; my name is bo"
         className={styles.frontPageContent}
         headerClassName={styles.frontPageContentHeader}>
         <h4 className={styles.frontPageContentActions}>

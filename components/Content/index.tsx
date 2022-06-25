@@ -4,26 +4,56 @@ import classes from "clsx"
 import Divider from "../Divider"
 import styles from "./content.module.css"
 
-interface Props {
-  header: string
+export interface HeaderProps {
+  Header: string | React.ReactNode
+  isSeamless?: boolean
   className?: string
   headerClassName?: string
-  HeaderAdorner?: React.FunctionComponent
+  HeaderAdorner?: React.ReactNode
 }
 
-const Content: React.FunctionComponent<Props> = ({
+const DefaultHeader: React.FunctionComponent<HeaderProps> = ({
+  Header,
+  headerClassName = "",
+  HeaderAdorner
+}) => (
+  <div className={styles.contentHeaderFlex}>
+    <h1
+      className={
+        classes(
+          styles.container,
+          headerClassName
+        )
+      }>
+      {Header}
+    </h1>
+
+    {HeaderAdorner != null && HeaderAdorner}
+  </div>
+)
+
+const Content: React.FunctionComponent<HeaderProps> = ({
   children,
-  header,
+  Header,
   HeaderAdorner,
   headerClassName = "",
-  className = ""
+  className = "",
+  isSeamless = false
 }) => (
-  <section className={classes(styles.content, className !== "" && className)}>
+  <section className={
+    classes(
+      styles.content,
+      isSeamless && styles.contentSeamless,
+      className !== "" && className
+    )
+  }>
     <section className={styles.contentHeader}>
-      <div className={styles.contentHeaderFlex}>
-        <h1 className={classes(styles.container, headerClassName)}>{header}</h1>
-        {HeaderAdorner != null && <HeaderAdorner />}
-      </div>
+      {
+        typeof Header === "string"
+          ? (<DefaultHeader {...{ Header: Header, headerClassName, HeaderAdorner }} />)
+          : Header
+      }
+
       <Divider />
     </section>
 
