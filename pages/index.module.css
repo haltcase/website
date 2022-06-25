@@ -1,67 +1,72 @@
 .sidebar {
-  width: 30%;
-  margin-right: 3rem;
+	width: 30%;
+	margin-right: 3rem;
 }
 
 .intro {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .introAvatar {
-  border-radius: 50%;
-  max-width: 50%;
-  margin-bottom: 2rem;
+	border-radius: 50%;
+	max-width: 50%;
+	margin-bottom: 2rem;
 }
 
 .introName {
-  margin: 0;
-  font-size: 2rem;
+	margin: 0;
+	font-size: 2rem;
 }
 
 .introContact {
-  margin: 0.25rem 1px;
-  font-weight: 300;
-  letter-spacing: 0.12rem;
-  text-transform: uppercase;
+	margin: 0.25rem 1px;
+	font-weight: 300;
+	letter-spacing: 0.12rem;
+	text-transform: uppercase;
 }
 
 .introContact a {
-  text-decoration-style: dashed;
+	text-decoration-style: dashed;
 }
 
-.introSummary {}
+.introSummary {
+}
 
 .frontPageContent {
-  border: inherit;
-  background-color: inherit;
+	border: inherit;
+	background-color: inherit;
 }
 
 .frontPageContentHeader {
-  color: var(--color-primary);
+	color: var(--color-primary);
 }
 
 @supports (-webkit-text-fill-color: white) and (background-clip: text) {
-  .frontPageContentHeader {
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+	.frontPageContentHeader {
+		background: linear-gradient(
+			90deg,
+			var(--color-primary),
+			var(--color-secondary)
+		);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 }
 
 @media screen and (max-width: 700px) {
-  .sidebar {
-    margin-right: initial;
-    margin-bottom: 1.5rem;
-    width: 100%;
-  }
+	.sidebar {
+		margin-right: initial;
+		margin-bottom: 1.5rem;
+		width: 100%;
+	}
 
-  .intro {
-    text-align: center;
-  }
+	.intro {
+		text-align: center;
+	}
 
-  .introAvatar {
-    margin: 1.5rem auto;
-    max-width: 30%;
-  }
+	.introAvatar {
+		margin: 1.5rem auto;
+		max-width: 30%;
+	}
 }

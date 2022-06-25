@@ -4,10 +4,10 @@ Source for my personal website, developed with React, TypeScript, and Next.js. I
 
 ## Notable libraries / tools used
 
-* React
-* TypeScript
-* CSS Modules
-* GraphQL
+- React
+- TypeScript
+- CSS Modules
+- GraphQL
 
 [url]: https://bolingen.me
-[Vercel]: https://vercel.com/home
+[vercel]: https://vercel.com/home

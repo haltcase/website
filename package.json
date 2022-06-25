@@ -1,37 +1,36 @@
 {
-  "private": true,
-  "name": "@citycide/website",
-  "version": "1.0.0",
-  "license": "MIT",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "type-check": "tsc",
-    "lint": "eslint \"**/*.{j,t}{s,sx}\""
-  },
-  "dependencies": {
-    "@icons-pack/react-simple-icons": "^3.13.0",
-    "clsx": "^1.1.1",
-    "isomorphic-unfetch": "^3.1.0",
-    "next": "^10.0.4",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-feather": "^2.0.9"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.14",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.11.0",
-    "@typescript-eslint/parser": "^4.11.0",
-    "eslint": "^7.16.0",
-    "eslint-config-standard-with-typescript": "^19.0.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-standard": "4",
-    "typescript": "^4.1.3"
-  }
+	"private": true,
+	"name": "@citycide/website",
+	"version": "1.0.0",
+	"license": "MIT",
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"type-check": "tsc",
+		"lint": "eslint --ignore-path .gitignore . && prettier --list-different --ignore-path .gitignore .",
+		"format": "eslint --fix --ignore-path .gitignore . && prettier --write --ignore-path .gitignore ."
+	},
+	"dependencies": {
+		"@icons-pack/react-simple-icons": "^4.6.1",
+		"clsx": "^1.1.1",
+		"isomorphic-unfetch": "^3.1.0",
+		"next": "^12.1.6",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-feather": "^2.0.9"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.25",
+		"@types/react": "^18.0.14",
+		"@types/react-dom": "^18.0.5",
+		"@typescript-eslint/eslint-plugin": "^5.29.0",
+		"@typescript-eslint/parser": "^5.29.0",
+		"eslint": "^8.18.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-react": "^7.30.1",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"prettier": "^2.7.1",
+		"typescript": "^4.5.5"
+	}
 }

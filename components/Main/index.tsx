@@ -1,13 +1,9 @@
-import React from "react"
+import React from "react";
 
-import styles from "./main.module.css"
+import styles from "./main.module.css";
 
-const Main: React.FunctionComponent = ({
-  children
-}) => (
-  <main className={styles.main}>
-    {children}
-  </main>
-)
+const Main: React.FunctionComponent = ({ children }) => (
+	<main className={styles.main}>{children}</main>
+);
 
-export default Main
+export default Main;

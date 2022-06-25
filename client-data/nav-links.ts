@@ -1,12 +1,12 @@
 interface NavLinkData {
-  text: string
-  target: string
+	text: string;
+	target: string;
 }
 
 const links: NavLinkData[] = [
-  { text: "About", target: "/about" },
-  { text: "Projects", target: "/projects" },
-  { text: "Contact", target: "/contact" }
-]
+	{ text: "About", target: "/about" },
+	{ text: "Projects", target: "/projects" },
+	{ text: "Contact", target: "/contact" }
+];
 
-export default links
+export default links;
