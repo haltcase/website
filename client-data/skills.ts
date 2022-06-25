@@ -12,7 +12,8 @@ const skills: MessageList = [
   "command line interfaces",
   { text: "React", href: "https://reactjs.org/" },
   "email campaigns",
-  "process improvement"
+  "process improvement",
+  "automation"
 ]
 
 export default skills

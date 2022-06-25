@@ -11,7 +11,8 @@ import styles from "./index.module.css"
 const actions = [
   "program",
   "design",
-  "improve"
+  "improve",
+  "automate"
 ]
 
 const IndexPage: React.FunctionComponent = () => (
