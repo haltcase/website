@@ -5,7 +5,7 @@ import { Mail } from "react-feather";
 
 interface SocialLink {
 	href: string;
-	Icon: SimpleIcon | FeatherIcon;
+	Icon: typeof SimpleIcon | FeatherIcon;
 	callout?: string;
 	display?: string;
 }
