@@ -1,11 +1,11 @@
-import { Icon as SimpleIcon } from "@icons-pack/react-simple-icons";
+import type { Icon as SimpleIcon } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import { Icon as FeatherIcon } from "react-feather";
 
 interface Props {
 	href: string;
-	Icon: SimpleIcon | FeatherIcon;
+	Icon: typeof SimpleIcon | FeatherIcon;
 	title?: string;
 	size?: string;
 	rel?: string;
