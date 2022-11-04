@@ -77,12 +77,18 @@ const selectedProjects = {
 			</p>
 		)
 	},
-	fugitive: {
+	tablemark: {
 		description: (
 			<p>
-				Command line interface written in Nim designed to wrap the&thinsp;
-				<code>git</code> developer tool to make it more intuitive and
-				convenient, including some useful GitHub addons.
+				TypeScript library for formatting JSON data to markdown tables. There is
+				also a command-line wrapper,{" "}
+				<a
+					href="https://github.com/haltcase/tablemark-cli"
+					target="_blank"
+					rel="noreferrer">
+					<code>tablemark-cli</code>
+				</a>
+				.
 			</p>
 		)
 	}
