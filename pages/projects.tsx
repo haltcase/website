@@ -1,5 +1,5 @@
 import fetch from "isomorphic-unfetch";
-import { GetServerSideProps } from "next";
+import type { GetStaticProps } from "next";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import { Code, Globe, Star } from "react-feather";
@@ -88,7 +88,11 @@ const selectedProjects = {
 	}
 };
 
-export const getServerSideProps: GetServerSideProps = async _context => {
+const cachePeriod = 10 * 60;
+
+export const getStaticProps: GetStaticProps<{
+	repos: Repository[];
+}> = async _context => {
 	const token = process.env.WEBSITE_GITHUB_TOKEN;
 
 	if (token == null || token === "") {
@@ -98,7 +102,8 @@ export const getServerSideProps: GetServerSideProps = async _context => {
 		return {
 			props: {
 				repos: []
-			}
+			},
+			revalidate: cachePeriod
 		};
 	}
 
@@ -165,7 +170,8 @@ query {
 	return {
 		props: {
 			repos
-		}
+		},
+		revalidate: cachePeriod
 	};
 };
 
