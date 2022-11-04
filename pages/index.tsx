@@ -28,10 +28,8 @@ const IndexPage: FunctionComponent = () => (
 							Learner, dreamer, and a believer that our reach exceeds our grasp.
 						</p>
 
-						<Link href="/about">
-							<a className="button">
-								<button>More</button>
-							</a>
+						<Link href="/about" className="button">
+							<button>More</button>
 						</Link>
 					</section>
 
@@ -55,24 +53,18 @@ const IndexPage: FunctionComponent = () => (
 				</h4>
 
 				<p>
-					I am an engineer on the GATHER platform at&thinsp;
-					<Link href="https://www.seachangemn.com">
+					I am an engineer on the GATHER platform at{" "}
+					<a
+						href="https://www.seachangemn.com"
+						target="_blank"
+						rel="noreferrer">
 						SeaChange Print Innovations
-					</Link>
-					&thinsp;by day, and a developer by night. Well, also day. Extending
-					into the night. Please feel free to{" "}
-					<Link href="/about">
-						<a>read more about me</a>
-					</Link>
-					,&thinsp;
-					<Link href="/contact">
-						<a>contact me</a>
-					</Link>
-					, or check out some of the&thinsp;
-					<Link href="/projects">
-						<a>projects</a>
-					</Link>{" "}
-					I’ve worked on.
+					</a>{" "}
+					by day, and a developer by night. Well, also day. Extending into the
+					night. Please feel free to{" "}
+					<Link href="/about">read more about me</Link>,{" "}
+					<Link href="/contact">contact me</Link>, or check out some of the{" "}
+					<Link href="/projects">projects</Link> I’ve worked on.
 				</p>
 			</Content>
 		</Main>

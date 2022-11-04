@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FunctionComponent } from "react";
 import { ArrowRight } from "react-feather";
 
@@ -41,14 +40,17 @@ const AboutPage: FunctionComponent = () => (
 				<p>
 					I graduated with a degree in Graphic Communications Management (GCM),
 					which is a print industry triple threat of{" "}
-					<span className="italic">graphic design</span>,&thinsp;
-					<span className="italic">communication skills</span>, and&thinsp;
+					<span className="italic">graphic design</span>,{" "}
+					<span className="italic">communication skills</span>, and{" "}
 					<span className="italic">project management</span>. After finishing my
 					degree I started my career in print &amp; mail in the Minneapolis
-					area, and am currently an engineer on the GATHER platform for&thinsp;
-					<Link href="https://www.seachangemn.com">
+					area, and am currently an engineer on the GATHER platform for{" "}
+					<a
+						href="https://www.seachangemn.com"
+						target="_blank"
+						rel="noreferrer">
 						SeaChange Print Innovations.
-					</Link>
+					</a>
 				</p>
 
 				<p>
