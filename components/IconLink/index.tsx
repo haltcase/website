@@ -17,14 +17,12 @@ const IconLink: FunctionComponent<Props> = ({
 	Icon,
 	title = "",
 	size = "18",
-	rel = "",
-	target = ""
+	rel = "noreferrer",
+	target = "_blank"
 }) => (
-	<Link href={href}>
-		<a className="icon" title={title} rel={rel} target={target}>
-			<Icon size={size} />
-		</a>
-	</Link>
+	<a href={href} className="icon" title={title} rel={rel} target={target}>
+		<Icon size={size} />
+	</a>
 );
 
 export default IconLink;

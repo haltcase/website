@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FunctionComponent } from "react";
 
 import socialLinks from "../client-data/social-links";
@@ -15,7 +14,9 @@ const ContactPage: FunctionComponent = () => (
 					{Object.entries(socialLinks).map(([title, link]) => (
 						<li key={link.href}>
 							<span>{link.callout}</span>
-							<Link href={link.href}>{link.display ?? title}</Link>
+							<a href={link.href} target="_blank" rel="noreferrer">
+								{link.display ?? title}
+							</a>
 						</li>
 					))}
 				</ul>

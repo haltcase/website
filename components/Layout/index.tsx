@@ -23,17 +23,16 @@ const NavLink: FunctionComponent<NavLinkProps> = ({ text, target }) => {
 	const router = useRouter();
 
 	return (
-		<Link href={target}>
-			<a
-				className={classes(
-					styles.navLink,
-					router.pathname === target && styles.navLinkActive
-				)}>
-				<span className={styles.navLinkBefore}>
-					<ChevronRight size="10" />
-				</span>
-				<span className={styles.navLinkText}>{text}</span>
-			</a>
+		<Link
+			href={target}
+			className={classes(
+				styles.navLink,
+				router.pathname === target && styles.navLinkActive
+			)}>
+			<span className={styles.navLinkBefore}>
+				<ChevronRight size="10" />
+			</span>
+			<span className={styles.navLinkText}>{text}</span>
 		</Link>
 	);
 };
@@ -63,11 +62,9 @@ const Layout: FunctionComponent<Props> = ({
 			</Head>
 			<header className={classes(styles.header, isOpen && styles.open)}>
 				<nav className={styles.navLeft}>
-					<Link href="/">
-						<a className={styles.logoContainer} title="Home">
-							<img className={styles.logoImage} src="/avatar.jpg" />
-							<span>bo lingen</span>
-						</a>
+					<Link href="/" className={styles.logoContainer} title="Home">
+						<img className={styles.logoImage} src="/avatar.jpg" />
+						<span>bo lingen</span>
 					</Link>
 				</nav>
 

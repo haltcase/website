@@ -15,10 +15,8 @@ const NotFoundPage: FunctionComponent = () => (
 				headerClassName={styles.header}>
 				<p className={styles.errorBody}>
 					This page could not be found.
-					<Link href="/">
-						<a className={styles.returnButton}>
-							<button>Home</button>
-						</a>
+					<Link href="/" className={styles.returnButton}>
+						<button>Home</button>
 					</Link>
 				</p>
 			</Content>
