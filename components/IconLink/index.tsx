@@ -1,5 +1,4 @@
 import type { Icon as SimpleIcon } from "@icons-pack/react-simple-icons";
-import Link from "next/link";
 import { FunctionComponent } from "react";
 import { Icon as FeatherIcon } from "react-feather";
 
