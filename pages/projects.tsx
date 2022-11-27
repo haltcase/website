@@ -95,6 +95,7 @@ const selectedProjects = {
 };
 
 const cachePeriod = 10 * 60;
+const repoCount = 10;
 
 export const getStaticProps: GetStaticProps<{
 	repos: Repository[];
@@ -117,7 +118,7 @@ export const getStaticProps: GetStaticProps<{
 query {
   viewer {
     repositories (
-      first: 50,
+      first: $repoCount,
       orderBy: {
         field: STARGAZERS,
         direction: DESC
@@ -149,7 +150,7 @@ query {
 				Authorization: `bearer ${token}`
 			},
 			method: "POST",
-			body: JSON.stringify({ query })
+			body: JSON.stringify({ query, variables: { repoCount } })
 		});
 
 		const json: RepositoriesResult = await result.json();
