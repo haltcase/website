@@ -31,7 +31,8 @@ export const fetchGithub = async <TReturn extends QueryResult>(
 		const json: TReturn = await result.json();
 
 		if (json.errors != null) {
-			throw new Error(json.errors.map(it => it.message).join("\n"));
+			console.error(json.errors.map(it => it.message).join("\n"));
+			return;
 		}
 
 		return json;
