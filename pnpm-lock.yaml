@@ -14,6 +14,7 @@ specifiers:
   eslint-plugin-simple-import-sort: ^8.0.0
   isomorphic-unfetch: ^3.1.0
   next: ^13.0.1
+  next-plausible: ^3.6.4
   prettier: ^2.7.1
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -25,6 +26,7 @@ dependencies:
   clsx: 1.2.1
   isomorphic-unfetch: 3.1.0
   next: 13.0.1_biqbaboplfbrettd7655fr4n2y
+  next-plausible: 3.6.4_cuttyyug54cjzme6dhlgj6veu4
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-feather: 2.0.10_react@18.2.0
@@ -1233,6 +1235,18 @@ packages:
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
+
+  /next-plausible/3.6.4_cuttyyug54cjzme6dhlgj6veu4:
+    resolution: {integrity: sha512-aHL4IL+gkkjs5ScB18LZ3LMEWXKR5VTvnMDs/fHNFHadOh23i37fD+VP5oAQLALR8Mde63l9JJljrw9DkvjWjQ==}
+    peerDependencies:
+      next: ^11.1.0 || ^12.0.0 || ^13.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      next: 13.0.1_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /next/13.0.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-ErCNBPIeZMKFn6hX+ZBSlqZVgJIeitEqhGTuQUNmYXJ07/A71DZ7AJI8eyHYUdBb686LUpV1/oBdTq9RpzRVPg==}
