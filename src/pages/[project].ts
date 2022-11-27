@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 
 import { cachePeriod } from "../lib/constants";
 import { fetchRepo } from "../lib/github-graphql";
@@ -7,7 +7,7 @@ const notFound = {
 	notFound: true as const
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 	if (params == null || params.project == null) {
 		return notFound;
 	}
