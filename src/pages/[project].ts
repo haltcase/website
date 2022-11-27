@@ -4,7 +4,8 @@ import { cachePeriod } from "../lib/constants";
 import { fetchRepo } from "../lib/github-graphql";
 
 const notFound = {
-	notFound: true as const
+	notFound: true as const,
+	revalidate: cachePeriod
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
