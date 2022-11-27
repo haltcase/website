@@ -1,0 +1,14 @@
+.projectListingHeaderTitle {
+	padding-right: 1rem;
+}
+
+.projectListingHeader :global(.icon) {
+	margin: auto 0.5rem;
+}
+
+.projectListingStarCount {
+	font-family: var(--font-sans);
+	font-size: 1rem;
+	font-weight: 300;
+	text-decoration: none;
+}

@@ -1,0 +1,27 @@
+.contactList {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	list-style: none;
+}
+
+.contactList li {
+	min-width: 9em;
+	margin-right: 4rem;
+	margin-bottom: 2rem;
+}
+
+.contactList li * {
+	display: block;
+}
+
+@media screen and (max-width: 450px) {
+	.contactList {
+		padding: 0;
+	}
+
+	.contactList li {
+		margin-right: initial;
+		width: 100%;
+	}
+}
