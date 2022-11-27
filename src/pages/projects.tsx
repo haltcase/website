@@ -1,4 +1,3 @@
-import fetch from "isomorphic-unfetch";
 import type { GetStaticProps } from "next";
 import Link from "next/link";
 import { FunctionComponent } from "react";
@@ -9,93 +8,10 @@ import Content from "../components/Content";
 import IconLink from "../components/IconLink";
 import Layout from "../components/Layout";
 import Main from "../components/Main";
+import { cachePeriod } from "../lib/constants";
+import { fetchTopRepos, Repository } from "../lib/github-graphql";
+import selectedProjects from "../lib/selected-projects";
 import styles from "./projects.module.css";
-
-interface Repository {
-	name: keyof typeof selectedProjects;
-	url: string;
-	homepageUrl: string;
-	stargazerCount: number;
-	isArchived: boolean;
-	isDisabled: boolean;
-	isEmpty: boolean;
-	isTemplate: boolean;
-	isFork: boolean;
-}
-
-interface RepositoriesResult {
-	data?: {
-		viewer: {
-			repositories: {
-				edges: Array<{
-					node: Repository;
-				}>;
-			};
-		};
-	};
-}
-
-const selectedProjects = {
-	trilogy: {
-		description: (
-			<p>
-				Wrapper for SQLite databases in JavaScript, written in TypeScript. It is
-				designed to make using SQL queries more ergonomic within JavaScript
-				code.
-			</p>
-		)
-	},
-	"param.macro": {
-		description: (
-			<p>
-				Plugin for the Babel JavaScript compiler to add semi-syntactic partial
-				application and lambda parameters, inspired by similar features in Scala
-				&amp; Kotlin. I designed an{" "}
-				<a
-					href="https://param-macro.bolingen.me"
-					target="_blank"
-					rel="noreferrer">
-					online playground
-				</a>{" "}
-				for users to quickly experiment with the libary online.
-			</p>
-		)
-	},
-	cascade: {
-		description: (
-			<p>
-				Method, accessor, and assignment cascades for Nim implemented as a
-				compile-time macro, inspired by Smalltalk &amp; Dart.
-			</p>
-		)
-	},
-	glob: {
-		description: (
-			<p>
-				Pure Nim library for searching for files that match Unix-style
-				&ldquo;glob&rdquo; patterns, such as <code>./assets/**/*.png</code>.
-			</p>
-		)
-	},
-	tablemark: {
-		description: (
-			<p>
-				TypeScript library for formatting JSON data to markdown tables. There is
-				also a command-line wrapper,{" "}
-				<a
-					href="https://github.com/haltcase/tablemark-cli"
-					target="_blank"
-					rel="noreferrer">
-					<code>tablemark-cli</code>
-				</a>
-				.
-			</p>
-		)
-	}
-};
-
-const cachePeriod = 10 * 60;
-const repoCount = 10;
 
 export const getStaticProps: GetStaticProps<{
 	repos: Repository[];
@@ -114,65 +30,7 @@ export const getStaticProps: GetStaticProps<{
 		};
 	}
 
-	const query = `
-query {
-  viewer {
-    repositories (
-      first: $repoCount,
-      orderBy: {
-        field: STARGAZERS,
-        direction: DESC
-      },
-      ownerAffiliations: OWNER
-    ) {
-      edges {
-        node {
-          name
-          url
-          homepageUrl
-          stargazerCount
-          isArchived
-          isDisabled
-          isEmpty
-          isTemplate
-          isFork
-        }
-      }
-    }
-  }
-}`.replace(/\s+/g, " ");
-
-	let repos: Repository[] = [];
-
-	try {
-		const result = await fetch("https://api.github.com/graphql", {
-			headers: {
-				Authorization: `bearer ${token}`
-			},
-			method: "POST",
-			body: JSON.stringify({ query, variables: { repoCount } })
-		});
-
-		const json: RepositoriesResult = await result.json();
-
-		if (json.data != null) {
-			repos = json.data.viewer.repositories.edges
-				.map(edge => {
-					console.log(edge);
-					if (edge.node.homepageUrl == null) {
-						edge.node.homepageUrl = "";
-					}
-
-					return edge.node;
-				})
-				.filter(repo => Object.keys(selectedProjects).includes(repo.name));
-		}
-	} catch (ex) {
-		console.error(
-			"Failed to retrieve repository information from GitHub. ",
-			ex
-		);
-	}
+	const repos = (await fetchTopRepos()) ?? [];
 
 	return {
 		props: {
