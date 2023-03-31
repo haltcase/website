@@ -8,7 +8,8 @@ const nextConfig = {
 		{
 			source: "/.well-known/webfinger:path*",
 			destination:
-				"https://hachyderm.io/.well-known/webfinger?resource=acct:haltcase@hachyderm.io"
+				"https://hachyderm.io/.well-known/webfinger?resource=acct:haltcase@hachyderm.io",
+			permanent: false
 		}
 	]
 };
