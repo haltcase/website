@@ -1,5 +1,10 @@
 import type { Icon as SimpleIcon } from "@icons-pack/react-simple-icons";
-import { Github, Linkedin, Twitter } from "@icons-pack/react-simple-icons";
+import {
+	Github,
+	Linkedin,
+	Mastodon,
+	Twitter
+} from "@icons-pack/react-simple-icons";
 import type { Icon as FeatherIcon } from "react-feather";
 import { Mail } from "react-feather";
 
@@ -15,6 +20,11 @@ const socialLinks: Readonly<Record<string, SocialLink>> = Object.freeze({
 		href: "https://github.com/haltcase",
 		Icon: Github,
 		callout: "Follow on"
+	},
+	Mastodon: {
+		href: "https://hachyderm.io/@haltcase",
+		Icon: Mastodon,
+		callout: "Boost on"
 	},
 	Twitter: {
 		href: "https://twitter.com/haltcase",
