@@ -5,6 +5,7 @@ export default withPlausibleProxy({
 })({
 	redirects: [
 		{
+			basePath: false,
 			source: "/.well-known/webfinger",
 			destination:
 				"https://hachyderm.io/.well-known/webfinger?resource=acct:haltcase@hachyderm.io",
