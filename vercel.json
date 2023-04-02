@@ -1,5 +1,11 @@
 {
 	"github": {
 		"silent": true
-	}
+	},
+	"rewrites": [
+		{
+			"source": "/stats/:match*",
+			"destination": "https://stats.bolingen.me/:match*"
+		}
+	]
 }
