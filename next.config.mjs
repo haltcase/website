@@ -14,6 +14,10 @@ const nextConfig = {
 	],
 	rewrites: async () => [
 		{
+			source: "/stats/script.js",
+			destination: "https://stats.bolingen.me/umami.js"
+		},
+		{
 			source: "/stats/:match*",
 			destination: "https://stats.bolingen.me/:match*"
 		}
