@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import { cachePeriod } from "../lib/constants";
-import { fetchRepo, fetchTopRepos } from "../lib/github-graphql";
+import { fetchRepo } from "../lib/github-graphql";
 
 const notFound = {
 	notFound: true as const,
@@ -9,15 +9,8 @@ const notFound = {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const repos = await fetchTopRepos();
-
 	return {
-		paths:
-			repos?.map(repo => ({
-				params: {
-					project: repo.name
-				}
-			})) ?? [],
+		paths: [],
 		fallback: "blocking"
 	};
 };
