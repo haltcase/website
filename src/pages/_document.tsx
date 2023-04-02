@@ -8,7 +8,7 @@ const Document = () => {
 					async
 					defer
 					data-website-id="ebb6ad49-b14c-443e-8ae1-38aebeac7aaf"
-					src="/stats/script.js"></script>
+					src="/stats/us.js"></script>
 			</Head>
 			<body>
 				<Main />
