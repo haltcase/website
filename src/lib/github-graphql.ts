@@ -137,7 +137,7 @@ query($name: String!) {
 
 	const result = await fetchGithub<ViewerResult>(query, { name });
 
-	if (result == null) {
+	if (result?.data == null) {
 		return;
 	}
 
