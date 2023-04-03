@@ -9,6 +9,7 @@ interface Props {
 	size?: string;
 	rel?: string;
 	target?: string;
+	className?: string;
 }
 
 const IconLink: FunctionComponent<Props> = ({
@@ -17,9 +18,15 @@ const IconLink: FunctionComponent<Props> = ({
 	title = "",
 	size = "18",
 	rel = "noreferrer",
-	target = "_blank"
+	target = "_blank",
+	className
 }) => (
-	<a href={href} className="icon" title={title} rel={rel} target={target}>
+	<a
+		className={`icon ${className}`}
+		href={href}
+		title={title}
+		rel={rel}
+		target={target}>
 		<Icon size={size} />
 	</a>
 );
