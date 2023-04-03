@@ -1,4 +1,4 @@
-import fetch from "isomorphic-unfetch";
+import ky from "ky-universal";
 
 import selectedProjects from "./selected-projects";
 
@@ -20,22 +20,21 @@ export const fetchGithub = async <TReturn extends QueryResult>(
 	const token = process.env.WEBSITE_GITHUB_TOKEN;
 
 	try {
-		const result = await fetch("https://api.github.com/graphql", {
-			headers: {
-				Authorization: `bearer ${token}`
-			},
-			method: "POST",
-			body: JSON.stringify({ query: query.replace(/\s+/g, " "), variables })
-		});
+		const result = await ky
+			.post("https://api.github.com/graphql", {
+				headers: {
+					Authorization: `bearer ${token}`
+				},
+				json: { query: query.replace(/\s+/g, " "), variables }
+			})
+			.json<TReturn>();
 
-		const json: TReturn = await result.json();
-
-		if (json.errors != null) {
-			console.error(json.errors.map(it => it.message).join("\n"));
+		if (result.errors != null) {
+			console.error(result.errors.map(it => it.message).join("\n"));
 			return;
 		}
 
-		return json;
+		return result;
 	} catch (ex) {
 		console.error("Failed to fetch from GitHub. ", ex);
 	}

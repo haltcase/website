@@ -16,7 +16,8 @@
 	"dependencies": {
 		"@icons-pack/react-simple-icons": "^5.11.0",
 		"clsx": "^1.2.1",
-		"isomorphic-unfetch": "^3.1.0",
+		"ky": "^0.33.3",
+		"ky-universal": "^0.11.0",
 		"next": "^13.0.1",
 		"next-plausible": "^3.6.4",
 		"react": "^18.2.0",
