@@ -1,9 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 
-import avatarImage from "../../public/avatar.jpg";
-import socialLinks from "../client-data/social-links";
 import Content from "../components/Content";
 import Layout from "../components/Layout";
 import Main from "../components/Main";
@@ -15,36 +12,6 @@ const actions = ["program", "design", "improve", "automate"];
 const IndexPage: FunctionComponent = () => (
 	<Layout title="Bo Lingen">
 		<Main>
-			<section className={styles.sidebar} style={{ display: "none" }}>
-				<section className={styles.intro}>
-					<Image className={styles.introAvatar} src={avatarImage} alt="" />
-
-					<h2 className={styles.introName}>Bo Lingen</h2>
-
-					<p className={styles.introContact}>
-						<a
-							className="umami--click--sidebar-contact"
-							href={socialLinks.Email.href}>
-							{socialLinks.Email.display}
-						</a>
-					</p>
-
-					<section className={styles.introSummary}>
-						<p>
-							Learner, dreamer, and a believer that our reach exceeds our grasp.
-						</p>
-
-						<Link className="umami--click--sidebar-about button" href="/about">
-							<button>More</button>
-						</Link>
-					</section>
-
-					<section className={styles.footer}>
-						<p></p>
-					</section>
-				</section>
-			</section>
-
 			<Content
 				Header="hello &mdash; my name is bo"
 				className={styles.frontPageContent}
