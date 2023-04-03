@@ -9,7 +9,10 @@
 }
 
 .introAvatar {
+	align-self: center;
 	border-radius: 50%;
+	width: 50%;
+	height: auto;
 	max-width: 50%;
 	margin-bottom: 2rem;
 }

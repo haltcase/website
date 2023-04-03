@@ -1,10 +1,12 @@
 import classes from "clsx";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FunctionComponent, PropsWithChildren, useState } from "react";
 import { ChevronRight, Menu, X } from "react-feather";
 
+import avatarImage from "../../../public/avatar.jpg";
 import links from "../../client-data/nav-links";
 import Footer from "../../components/Footer";
 import styles from "./layout.module.css";
@@ -63,7 +65,7 @@ const Layout: FunctionComponent<Props> = ({
 			<header className={classes(styles.header, isOpen && styles.open)}>
 				<nav className={styles.navLeft}>
 					<Link href="/" className={styles.logoContainer} title="Home">
-						<img className={styles.logoImage} src="/avatar.jpg" />
+						<Image className={styles.logoImage} src={avatarImage} alt="" />
 						<span>bo lingen</span>
 					</Link>
 				</nav>

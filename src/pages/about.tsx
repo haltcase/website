@@ -1,6 +1,8 @@
+import Image from "next/image";
 import { FunctionComponent } from "react";
 import { ArrowRight } from "react-feather";
 
+import avatarImage from "../../public/avatar.jpg";
 import skills from "../client-data/skills";
 import Content from "../components/Content";
 import Divider from "../components/Divider";
@@ -16,7 +18,7 @@ const HeaderAdorner: FunctionComponent = () => (
 			<ArrowRight size="14" />
 		</div>
 
-		<img className={styles.aboutHeaderAvatar} src="/avatar.jpg" />
+		<Image className={styles.aboutHeaderAvatar} src={avatarImage} alt="" />
 	</div>
 );
 

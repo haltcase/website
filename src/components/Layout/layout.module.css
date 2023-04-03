@@ -27,7 +27,6 @@
 .logoContainer {
 	padding: 0 2rem;
 	border-bottom: none;
-	width: 100%;
 	height: 100%;
 	display: inline-flex;
 	align-items: center;
@@ -49,6 +48,7 @@
 .logoContainer img {
 	margin-right: 1rem;
 	border-radius: 50%;
+	width: 100%;
 	height: 100%;
 }
 

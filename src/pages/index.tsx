@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 
+import avatarImage from "../../public/avatar.jpg";
 import socialLinks from "../client-data/social-links";
 import Content from "../components/Content";
 import Layout from "../components/Layout";
@@ -15,7 +17,7 @@ const IndexPage: FunctionComponent = () => (
 		<Main>
 			<section className={styles.sidebar} style={{ display: "none" }}>
 				<section className={styles.intro}>
-					<img className={styles.introAvatar} src="/avatar.jpg" alt="" />
+					<Image className={styles.introAvatar} src={avatarImage} alt="" />
 
 					<h2 className={styles.introName}>Bo Lingen</h2>
 
