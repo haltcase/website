@@ -20,7 +20,11 @@ const IndexPage: FunctionComponent = () => (
 					<h2 className={styles.introName}>Bo Lingen</h2>
 
 					<p className={styles.introContact}>
-						<a href={socialLinks.Email.href}>{socialLinks.Email.display}</a>
+						<a
+							className="umami--click--sidebar-contact"
+							href={socialLinks.Email.href}>
+							{socialLinks.Email.display}
+						</a>
 					</p>
 
 					<section className={styles.introSummary}>
@@ -28,7 +32,7 @@ const IndexPage: FunctionComponent = () => (
 							Learner, dreamer, and a believer that our reach exceeds our grasp.
 						</p>
 
-						<Link href="/about" className="button">
+						<Link className="umami--click--sidebar-about button" href="/about">
 							<button>More</button>
 						</Link>
 					</section>
@@ -55,6 +59,7 @@ const IndexPage: FunctionComponent = () => (
 				<p>
 					I am an engineer on the GATHER platform at{" "}
 					<a
+						className="umami--click--intro-seachange-link"
 						href="https://www.seachangemn.com"
 						target="_blank"
 						rel="noreferrer">
@@ -62,9 +67,18 @@ const IndexPage: FunctionComponent = () => (
 					</a>{" "}
 					by day, and a developer by night. Well, also day. Extending into the
 					night. Please feel free to{" "}
-					<Link href="/about">read more about me</Link>,{" "}
-					<Link href="/contact">contact me</Link>, or check out some of the{" "}
-					<Link href="/projects">projects</Link> I’ve worked on.
+					<Link className="umami--click--intro-about" href="/about">
+						read more about me
+					</Link>
+					,{" "}
+					<Link className="umami--click--intro-contact" href="/contact">
+						contact me
+					</Link>
+					, or check out some of the{" "}
+					<Link className="umami--click--intro-projects" href="/projects">
+						projects
+					</Link>{" "}
+					I’ve worked on.
 				</p>
 			</Content>
 		</Main>

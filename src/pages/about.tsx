@@ -46,6 +46,7 @@ const AboutPage: FunctionComponent = () => (
 					degree I started my career in print &amp; mail in the Minneapolis
 					area, and am currently an engineer on the GATHER platform for{" "}
 					<a
+						className="umami--click--about-seachange-link"
 						href="https://www.seachangemn.com"
 						target="_blank"
 						rel="noreferrer">

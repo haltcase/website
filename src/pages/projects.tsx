@@ -51,6 +51,7 @@ const ProjectListing: FunctionComponent<ProjectListingProps> = ({ repo }) => {
 				<span className={styles.projectListingHeaderTitle}>{repo.name}</span>
 				{repo.homepageUrl !== "" && (
 					<IconLink
+						className={`umami--click--projects-homepage-${repo.name}`}
 						href={repo.homepageUrl}
 						Icon={Globe}
 						title="Homepage"
@@ -58,13 +59,19 @@ const ProjectListing: FunctionComponent<ProjectListingProps> = ({ repo }) => {
 					/>
 				)}
 				{repo.url !== "" && (
-					<IconLink href={repo.url} Icon={Code} title="Source" size="14" />
+					<IconLink
+						className={`umami--click--projects-repo-${repo.name}`}
+						href={repo.url}
+						Icon={Code}
+						title="Source"
+						size="14"
+					/>
 				)}
 				{repo.stargazerCount > 0 && (
 					<a
+						className={`umami--click--projects-stargazers-${repo.name} ${styles.projectListingStarCount}`}
 						href={repo.url + "/stargazers"}
-						title="GitHub Stars"
-						className={styles.projectListingStarCount}>
+						title="GitHub Stars">
 						<Star size="14" className="icon" />
 						<span>{repo.stargazerCount}</span>
 					</a>
@@ -86,7 +93,12 @@ const ProjectPage: FunctionComponent<ProjectPageProps> = ({ repos = [] }) => (
 			<Content Header="projects">
 				<p className="italic textSmall">
 					For a full list of my programming projects, please visit my&thinsp;
-					<Link href={socialLinks.GitHub.href}>GitHub profile</Link>.
+					<Link
+						className="umami--click--projects-github"
+						href={socialLinks.GitHub.href}>
+						GitHub profile
+					</Link>
+					.
 				</p>
 
 				{repos.length > 0 &&

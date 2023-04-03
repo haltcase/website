@@ -14,7 +14,11 @@ const ContactPage: FunctionComponent = () => (
 					{Object.entries(socialLinks).map(([title, link]) => (
 						<li key={link.href}>
 							<span>{link.callout}</span>
-							<a href={link.href} target="_blank" rel="noreferrer">
+							<a
+								className={`umami--click--contact-${title.toLowerCase()}`}
+								href={link.href}
+								target="_blank"
+								rel="noreferrer">
 								{link.display ?? title}
 							</a>
 						</li>

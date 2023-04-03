@@ -15,6 +15,7 @@ const Footer: FunctionComponent = () => (
 				{Object.entries(socialLinks).map(([title, link]) => (
 					<li key={link.href}>
 						<IconLink
+							className={`umami--click--footer-${title.toLowerCase()}`}
 							{...link}
 							title={title}
 							rel="me noopener"
@@ -31,6 +32,7 @@ const Footer: FunctionComponent = () => (
 			<ul className={styles.iconList}>
 				<li>
 					<IconLink
+						className={`umami--click--footer-source`}
 						href="https://github.com/haltcase/website"
 						Icon={Code}
 						title="Source at GitHub"
