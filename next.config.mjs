@@ -1,5 +1,3 @@
-import { withPlausibleProxy } from "next-plausible";
-
 /**
  * @type {import("next").NextConfig}
  */
@@ -20,6 +18,4 @@ const nextConfig = {
 	]
 };
 
-export default withPlausibleProxy({
-	customDomain: "https://plausible.lab.lingen.life"
-})(nextConfig);
+export default nextConfig;
