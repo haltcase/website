@@ -11,7 +11,7 @@
 		"dev": "next",
 		"build": "next build",
 		"start": "next start",
-		"type-check": "tsc",
+		"typecheck": "tsc",
 		"lint": "eslint --ignore-path .gitignore . && prettier --list-different --ignore-path .gitignore .",
 		"format": "eslint --fix --ignore-path .gitignore . && prettier --write --ignore-path .gitignore ."
 	},
