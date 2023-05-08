@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;700&family=Playfair+Display&display=swap");
 
-html {
+:root {
 	--color-border: rgb(200, 200, 200);
 	--color-fg: rgb(50, 50, 50);
 	--color-bg: rgb(235, 235, 235);

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { ChangeEvent, FunctionComponent, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 
 import styles from "./contact-form.module.css";
 
@@ -12,7 +12,7 @@ const validators = {
 	message: (value: string) => value.length > 1
 };
 
-const ContactForm: FunctionComponent = () => {
+const ContactForm: FC = () => {
 	const router = useRouter();
 
 	const [name, setName] = useState("");

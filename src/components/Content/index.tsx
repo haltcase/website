@@ -1,5 +1,5 @@
 import classes from "clsx";
-import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
+import { FC, PropsWithChildren, ReactNode } from "react";
 
 import Divider from "../Divider";
 import styles from "./content.module.css";
@@ -12,7 +12,7 @@ export interface HeaderProps extends PropsWithChildren {
 	HeaderAdorner?: ReactNode;
 }
 
-const DefaultHeader: FunctionComponent<HeaderProps> = ({
+const DefaultHeader: FC<HeaderProps> = ({
 	Header,
 	headerClassName = "",
 	HeaderAdorner
@@ -24,7 +24,7 @@ const DefaultHeader: FunctionComponent<HeaderProps> = ({
 	</div>
 );
 
-const Content: FunctionComponent<PropsWithChildren<HeaderProps>> = ({
+const Content: FC<PropsWithChildren<HeaderProps>> = ({
 	children,
 	Header,
 	HeaderAdorner,
