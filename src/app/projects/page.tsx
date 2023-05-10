@@ -42,27 +42,28 @@ const ProjectListing: FC<ProjectListingProps> = ({ repo }) => (
 			<span className={styles.projectListingHeaderTitle}>{repo.name}</span>
 			{repo.homepageUrl !== "" && (
 				<IconLink
-					className={`umami--click--projects-homepage-${repo.name}`}
 					href={repo.homepageUrl}
 					Icon={Globe}
 					title="Homepage"
 					size="14"
+					data-umami-event={`projects-homepage-${repo.name}`}
 				/>
 			)}
 			{repo.url !== "" && (
 				<IconLink
-					className={`umami--click--projects-repo-${repo.name}`}
 					href={repo.url}
 					Icon={Code}
 					title="Source"
 					size="14"
+					data-umami-event={`projects-repo-${repo.name}`}
 				/>
 			)}
 			{repo.stargazerCount > 0 && (
 				<a
-					className={`umami--click--projects-stargazers-${repo.name} ${styles.projectListingStarCount}`}
+					className={styles.projectListingStarCount}
 					href={repo.url + "/stargazers"}
-					title="GitHub Stars">
+					title="GitHub Stars"
+					data-umami-event={`projects-stargazers-${repo.name}`}>
 					<Star size="14" className="icon" />
 					<span>{repo.stargazerCount}</span>
 				</a>
@@ -81,9 +82,7 @@ const ProjectPage = async () => {
 			<Content Header="projects">
 				<p className="italic textSmall">
 					For a full list of my programming projects, please visit my&thinsp;
-					<a
-						className="umami--click--projects-github"
-						href={socialLinks.GitHub.href}>
+					<a href={socialLinks.GitHub.href} data-umami-event="projects-github">
 						GitHub profile
 					</a>
 					.

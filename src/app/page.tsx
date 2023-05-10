@@ -30,23 +30,23 @@ const IndexPage: React.FC = () => (
 			<p>
 				I am an engineer on the GATHER platform at{" "}
 				<a
-					className="umami--click--intro-seachange-link"
 					href="https://www.seachangemn.com"
 					target="_blank"
-					rel="noreferrer">
+					rel="noreferrer"
+					data-umami-event="intro-seachange-link">
 					SeaChange Print Innovations
 				</a>{" "}
 				by day, and a developer by night. Well, also day. Extending into the
 				night. Please feel free to{" "}
-				<Link className="umami--click--intro-about" href="/about">
+				<Link href="/about" data-umami-event="intro-about">
 					read more about me
 				</Link>
 				,{" "}
-				<Link className="umami--click--intro-contact" href="/contact">
+				<Link href="/contact" data-umami-event="intro-contact">
 					contact me
 				</Link>
 				, or check out some of the{" "}
-				<Link className="umami--click--intro-projects" href="/projects">
+				<Link href="/projects" data-umami-event="intro-projects">
 					projects
 				</Link>{" "}
 				I’ve worked on.

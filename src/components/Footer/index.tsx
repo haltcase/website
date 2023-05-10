@@ -16,11 +16,11 @@ const Footer: FC = () => (
 				{Object.entries(socialLinks).map(([title, link]) => (
 					<li key={link.href}>
 						<IconLink
-							className={`umami--click--footer-${title.toLowerCase()}`}
 							{...link}
 							title={title}
 							rel="me noopener"
 							target="_blank"
+							data-umami-event={`footer-${title.toLowerCase()}`}
 						/>
 					</li>
 				))}
@@ -33,10 +33,10 @@ const Footer: FC = () => (
 			<ul className={styles.iconList}>
 				<li>
 					<IconLink
-						className={`umami--click--footer-source`}
 						href="https://github.com/haltcase/website"
 						Icon={Code}
 						title="Source at GitHub"
+						data-umami-event="footer-source"
 					/>
 				</li>
 			</ul>

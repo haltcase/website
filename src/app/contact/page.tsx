@@ -18,10 +18,10 @@ const ContactPage: FC = () => (
 					<li key={link.href}>
 						<span>{link.callout}</span>
 						<a
-							className={`umami--click--contact-${title.toLowerCase()}`}
 							href={link.href}
 							target="_blank"
-							rel="noreferrer">
+							rel="noreferrer"
+							data-umami-event={`contact-${title.toLowerCase()}`}>
 							{link.display ?? title}
 						</a>
 					</li>

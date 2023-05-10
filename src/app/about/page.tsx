@@ -51,10 +51,10 @@ const AboutPage: FC = () => (
 				degree I started my career in print &amp; mail in the Minneapolis area,
 				and am currently an engineer on the GATHER platform for{" "}
 				<a
-					className="umami--click--about-seachange-link"
 					href="https://www.seachangemn.com"
 					target="_blank"
-					rel="noreferrer">
+					rel="noreferrer"
+					data-umami-event="about-seachange-link">
 					SeaChange Print Innovations.
 				</a>
 			</p>
