@@ -17,7 +17,17 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
-		"target": "esnext"
+		"target": "esnext",
+		"baseUrl": "src",
+		"paths": {
+			"@/*": ["./*"],
+			"@public/*": ["../public/*"]
+		},
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
 	},
 	"exclude": ["node_modules"],
 	"include": [
@@ -27,6 +37,8 @@
 		"**/*.jsx",
 		"**/*.mjs",
 		".*.js",
-		".eslintrc.cjs"
+		".eslintrc.cjs",
+		"postcss.config.cjs",
+		".next/types/**/*.ts"
 	]
 }

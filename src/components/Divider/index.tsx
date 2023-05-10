@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FC } from "react";
 
 import styles from "./divider.module.css";
 
@@ -6,7 +6,7 @@ interface Props {
 	width?: string;
 }
 
-const Divider: FunctionComponent<Props> = ({ width = "100%" }) => (
+const Divider: FC<Props> = ({ width = "100%" }) => (
 	<div className={styles.divider} style={{ width }} />
 );
 

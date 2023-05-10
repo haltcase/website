@@ -1,10 +1,6 @@
-import {
-	FunctionComponent,
-	MutableRefObject,
-	useEffect,
-	useRef,
-	useState
-} from "react";
+"use client";
+
+import { FC, MutableRefObject, useEffect, useRef, useState } from "react";
 
 export interface MessageData {
 	text: string;
@@ -48,7 +44,7 @@ const getMessage = (messageOrData: string | MessageData): string =>
 const getLinkTarget = (messageOrData: string | MessageData): string =>
 	typeof messageOrData === "string" ? "#" : messageOrData.href ?? "#";
 
-const SkillCycle: FunctionComponent<Props> = ({
+const MessageCycle: FC<Props> = ({
 	messages = [],
 	interval = 2000,
 	prefix = "",
@@ -137,4 +133,4 @@ const SkillCycle: FunctionComponent<Props> = ({
 	);
 };
 
-export default SkillCycle;
+export default MessageCycle;

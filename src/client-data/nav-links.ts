@@ -1,6 +1,8 @@
-interface NavLinkData {
+import { Route } from "next";
+
+interface NavLinkData<T extends string = string> {
 	text: string;
-	target: string;
+	target: Route<T>;
 }
 
 const links: NavLinkData[] = [

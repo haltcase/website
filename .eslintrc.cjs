@@ -1,6 +1,5 @@
 const [_, warn, error] = [0, 1, 2];
 
-// eslint-disable-next-line no-undef
 module.exports = {
 	root: true,
 	extends: [
@@ -36,5 +35,27 @@ module.exports = {
 		react: {
 			version: "detect"
 		}
-	}
+	},
+	overrides: [
+		{
+			files: ["**/*.cjs"],
+			env: {
+				node: true
+			},
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: false
+				},
+				sourceType: "script"
+			}
+		},
+		{
+			files: ["**/*.{js,ts}"],
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: false
+				}
+			}
+		}
+	]
 };
