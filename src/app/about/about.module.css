@@ -40,6 +40,14 @@
 .aboutSkills {
 	font-size: 2rem;
 	color: var(--color-primary);
+
+	@media (width <= 600px) {
+		margin-block-start: revert;
+		height: 8rem;
+		display: flex;
+		line-height: 2.5rem;
+		align-items: center;
+	}
 }
 
 .aboutSkills::after {
@@ -52,14 +60,4 @@
 	letter-spacing: 0.1rem;
 	font-size: 0.8rem;
 	color: gray;
-}
-
-@media screen and (max-width: 600px) {
-	.aboutSkills {
-		margin-block-start: revert;
-		height: 8rem;
-		display: flex;
-		line-height: 2.5rem;
-		align-items: center;
-	}
 }
