@@ -38,6 +38,7 @@
 		"**/*.mjs",
 		".*.js",
 		".eslintrc.cjs",
+		"postcss.config.cjs",
 		".next/types/**/*.ts"
 	]
 }
