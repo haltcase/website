@@ -32,10 +32,10 @@ export const socialLinks: Readonly<Record<string, SocialLink>> = Object.freeze({
 		callout: "Reach out on"
 	},
 	Email: {
-		href: "mailto:bo@lingen.life",
+		href: "mailto:bo@haltcase.dev",
 		Icon: Mail,
 		callout: "Email me at",
-		display: "bo@lingen.life"
+		display: "bo@haltcase.dev"
 	},
 	LinkedIn: {
 		href: "https://www.linkedin.com/in/bo-lingen",
