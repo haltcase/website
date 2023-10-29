@@ -1,34 +1,34 @@
-import type { Icon as SimpleIcon } from "@icons-pack/react-simple-icons";
 import {
-	Github,
-	Linkedin,
-	Mastodon,
-	Twitter
+	SiGithub,
+	SiLinkedin,
+	SiMastodon,
+	SiTwitter
 } from "@icons-pack/react-simple-icons";
+import type { IconType } from "@icons-pack/react-simple-icons/types";
 import type { Icon as FeatherIcon } from "react-feather";
 import { Mail } from "react-feather";
 
 interface SocialLink {
 	href: string;
-	Icon: typeof SimpleIcon | FeatherIcon;
+	Icon: IconType | FeatherIcon;
 	callout?: string;
 	display?: string;
 }
 
-const socialLinks: Readonly<Record<string, SocialLink>> = Object.freeze({
+export const socialLinks: Readonly<Record<string, SocialLink>> = Object.freeze({
 	GitHub: {
 		href: "https://github.com/haltcase",
-		Icon: Github,
+		Icon: SiGithub,
 		callout: "Follow on"
 	},
 	Mastodon: {
 		href: "https://hachyderm.io/@haltcase",
-		Icon: Mastodon,
+		Icon: SiMastodon,
 		callout: "Boost on"
 	},
 	Twitter: {
 		href: "https://twitter.com/haltcase",
-		Icon: Twitter,
+		Icon: SiTwitter,
 		callout: "Reach out on"
 	},
 	Email: {
@@ -39,9 +39,7 @@ const socialLinks: Readonly<Record<string, SocialLink>> = Object.freeze({
 	},
 	LinkedIn: {
 		href: "https://www.linkedin.com/in/bo-lingen",
-		Icon: Linkedin,
+		Icon: SiLinkedin,
 		callout: "Send a message on"
 	}
 });
-
-export default socialLinks;

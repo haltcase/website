@@ -1,13 +1,13 @@
+import avatarImage from "@public/avatar.jpg";
 import Image from "next/image";
-import { FC } from "react";
+import type { FC } from "react";
 import { ArrowRight } from "react-feather";
 
-import avatarImage from "/public/avatar.jpg";
-import skills from "@/client-data/skills";
-import Content from "@/components/Content";
-import Divider from "@/components/Divider";
-import Main from "@/components/Main";
-import MessageCycle from "@/components/MessageCycle";
+import { skills } from "@/client-data/skills";
+import { Content } from "@/components/Content";
+import { Divider } from "@/components/Divider";
+import { Main } from "@/components/Main";
+import { MessageCycle } from "@/components/MessageCycle";
 
 import styles from "./about.module.css";
 
@@ -31,7 +31,8 @@ const AboutPage: FC = () => (
 		<Content
 			Header="about me"
 			className={styles.aboutContent}
-			HeaderAdorner={<HeaderAdorner />}>
+			HeaderAdorner={<HeaderAdorner />}
+		>
 			<p className={styles.aboutSkills}>
 				<MessageCycle
 					messages={skills}
@@ -54,7 +55,8 @@ const AboutPage: FC = () => (
 					href="https://www.seachangemn.com"
 					target="_blank"
 					rel="noreferrer"
-					data-umami-event="about-seachange-link">
+					data-umami-event="about-seachange-link"
+				>
 					SeaChange Print Innovations.
 				</a>
 			</p>

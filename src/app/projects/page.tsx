@@ -1,12 +1,13 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { Code, Globe, Star } from "react-feather";
 
-import socialLinks from "@/client-data/social-links";
-import Content from "@/components/Content";
-import IconLink from "@/components/IconLink";
-import Main from "@/components/Main";
-import { fetchTopRepos, Repository } from "@/lib/github-graphql";
-import selectedProjects from "@/lib/selected-projects";
+import { socialLinks } from "@/client-data/social-links";
+import { Content } from "@/components/Content";
+import { IconLink } from "@/components/IconLink";
+import { Main } from "@/components/Main";
+import type { Repository } from "@/lib/github-graphql";
+import { fetchTopRepos } from "@/lib/github-graphql";
+import { selectedProjects } from "@/lib/selected-projects";
 
 import styles from "./projects.module.css";
 
@@ -20,8 +21,8 @@ const getRepos = async (): Promise<Repository[]> => {
 	const token = process.env.WEBSITE_GITHUB_TOKEN;
 
 	if (token == null || token === "") {
-		console.error(
-			"Projects: no GitHub token found in WEBSITE_GITHUB_TOKEN environment variable."
+		process.stderr.write(
+			"Projects: no GitHub token found in WEBSITE_GITHUB_TOKEN environment variable.\n"
 		);
 
 		return [];
@@ -61,9 +62,10 @@ const ProjectListing: FC<ProjectListingProps> = ({ repo }) => (
 			{repo.stargazerCount > 0 && (
 				<a
 					className={styles.projectListingStarCount}
-					href={repo.url + "/stargazers"}
+					href={`${repo.url}/stargazers`}
 					title="GitHub Stars"
-					data-umami-event={`projects-stargazers-${repo.name}`}>
+					data-umami-event={`projects-stargazers-${repo.name}`}
+				>
 					<Star size="14" className="icon" />
 					<span>{repo.stargazerCount}</span>
 				</a>
@@ -89,7 +91,7 @@ const ProjectPage = async () => {
 				</p>
 
 				{repos.length > 0 &&
-					repos.map(repo => <ProjectListing repo={repo} key={repo.name} />)}
+					repos.map((repo) => <ProjectListing repo={repo} key={repo.name} />)}
 			</Content>
 		</Main>
 	);

@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, MutableRefObject, useEffect, useRef, useState } from "react";
+import type { FC, MutableRefObject } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface MessageData {
 	text: string;
@@ -9,7 +10,7 @@ export interface MessageData {
 
 export type MessageList = Array<string | MessageData>;
 
-interface Props {
+interface MessageListProps {
 	/** List of messages to cycle through */
 	messages: MessageList;
 	/** Number of milliseconds between messages. */
@@ -44,7 +45,7 @@ const getMessage = (messageOrData: string | MessageData): string =>
 const getLinkTarget = (messageOrData: string | MessageData): string =>
 	typeof messageOrData === "string" ? "#" : messageOrData.href ?? "#";
 
-const MessageCycle: FC<Props> = ({
+export const MessageCycle: FC<MessageListProps> = ({
 	messages = [],
 	interval = 2000,
 	prefix = "",
@@ -79,7 +80,7 @@ const MessageCycle: FC<Props> = ({
 
 		const delta = isDeleting ? -1 : 1;
 
-		setText(message.substring(0, text.length + delta));
+		setText(message.slice(0, Math.max(0, text.length + delta)));
 		setLink(linkTarget);
 		setSpeed(isDeleting ? deleteSpeed : typingSpeed);
 
@@ -109,11 +110,13 @@ const MessageCycle: FC<Props> = ({
 		<span
 			className={messageClass === "" ? messageClass : "typingMessage"}
 			onMouseEnter={() => setIsPaused(true)}
-			onMouseLeave={() => setIsPaused(false)}>
+			onMouseLeave={() => setIsPaused(false)}
+		>
 			<span
 				className={
 					staticPrefixClass === "" ? staticPrefixClass : "typingStaticPrefix"
-				}>
+				}
+			>
 				{staticPrefix}
 			</span>
 
@@ -122,7 +125,8 @@ const MessageCycle: FC<Props> = ({
 			<span
 				className={
 					staticSuffixClass === "" ? staticSuffixClass : "typingStaticSuffix"
-				}>
+				}
+			>
 				{staticSuffix}
 			</span>
 
@@ -132,5 +136,3 @@ const MessageCycle: FC<Props> = ({
 		</span>
 	);
 };
-
-export default MessageCycle;

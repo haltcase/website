@@ -1,13 +1,11 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 import styles from "./divider.module.css";
 
-interface Props {
+interface DividerProps {
 	width?: string;
 }
 
-const Divider: FC<Props> = ({ width = "100%" }) => (
+export const Divider: FC<DividerProps> = ({ width = "100%" }) => (
 	<div className={styles.divider} style={{ width }} />
 );
-
-export default Divider;

@@ -1,27 +1,33 @@
-import * as icons from "@icons-pack/react-simple-icons";
-import { FC } from "react";
+import {
+	SiDotnet,
+	SiGithub,
+	SiLastdotfm,
+	SiReact,
+	SiWindows11
+} from "@icons-pack/react-simple-icons";
+import type { FC } from "react";
 
-import Content from "@/components/Content";
-import Main from "@/components/Main";
+import { Content } from "@/components/Content";
+import { Main } from "@/components/Main";
 
 const ProjectPage: FC = () => (
 	<Main>
 		<Content Header="favorites">
 			<ul style={{ listStyle: "none" }}>
 				<li>
-					<icons.Dotnet />
+					<SiDotnet />
 				</li>
 				<li>
-					<icons.Github />
+					<SiGithub />
 				</li>
 				<li>
-					<icons.ReactJs />
+					<SiReact />
 				</li>
 				<li>
-					<icons.Lastdotfm />
+					<SiLastdotfm />
 				</li>
 				<li>
-					<icons.Windows />
+					<SiWindows11 />
 				</li>
 			</ul>
 		</Content>

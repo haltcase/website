@@ -1,7 +1,7 @@
 import classes from "clsx";
-import { FC, PropsWithChildren, ReactNode } from "react";
+import type { FC, PropsWithChildren, ReactNode } from "react";
 
-import Divider from "../Divider";
+import { Divider } from "../Divider";
 import styles from "./content.module.css";
 
 export interface HeaderProps extends PropsWithChildren {
@@ -24,7 +24,7 @@ const DefaultHeader: FC<HeaderProps> = ({
 	</div>
 );
 
-const Content: FC<PropsWithChildren<HeaderProps>> = ({
+export const Content: FC<PropsWithChildren<HeaderProps>> = ({
 	children,
 	Header,
 	HeaderAdorner,
@@ -37,12 +37,11 @@ const Content: FC<PropsWithChildren<HeaderProps>> = ({
 			styles.content,
 			isSeamless && styles.contentSeamless,
 			className !== "" && className
-		)}>
+		)}
+	>
 		<section className={styles.contentHeader}>
 			{typeof Header === "string" ? (
-				<DefaultHeader
-					{...{ Header: Header, headerClassName, HeaderAdorner }}
-				/>
+				<DefaultHeader {...{ Header, headerClassName, HeaderAdorner }} />
 			) : (
 				Header
 			)}
@@ -53,5 +52,3 @@ const Content: FC<PropsWithChildren<HeaderProps>> = ({
 		<article className={styles.container}>{children}</article>
 	</section>
 );
-
-export default Content;
