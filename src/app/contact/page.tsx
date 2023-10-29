@@ -1,8 +1,8 @@
-import { FC } from "react";
+import type { FC } from "react";
 
-import socialLinks from "@/client-data/social-links";
-import Content from "@/components/Content";
-import Main from "@/components/Main";
+import { socialLinks } from "@/client-data/social-links";
+import { Content } from "@/components/Content";
+import { Main } from "@/components/Main";
 
 import styles from "./contact.module.css";
 
@@ -21,7 +21,8 @@ const ContactPage: FC = () => (
 							href={link.href}
 							target="_blank"
 							rel="noreferrer"
-							data-umami-event={`contact-${title.toLowerCase()}`}>
+							data-umami-event={`contact-${title.toLowerCase()}`}
+						>
 							{link.display ?? title}
 						</a>
 					</li>

@@ -1,4 +1,4 @@
-export default {
+export const selectedProjects = {
 	trilogy: {
 		description: (
 			<p>
@@ -17,7 +17,8 @@ export default {
 				<a
 					href="https://param-macro.bolingen.me"
 					target="_blank"
-					rel="noreferrer">
+					rel="noreferrer"
+				>
 					online playground
 				</a>{" "}
 				for users to quickly experiment with the libary online.
@@ -48,7 +49,8 @@ export default {
 				<a
 					href="https://github.com/haltcase/tablemark-cli"
 					target="_blank"
-					rel="noreferrer">
+					rel="noreferrer"
+				>
 					<code>tablemark-cli</code>
 				</a>
 				.

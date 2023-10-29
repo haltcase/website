@@ -1,9 +1,9 @@
 import "./styles.css";
 
-import { FC } from "react";
+import type { FC } from "react";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export const metadata = {
 	title: {
@@ -24,7 +24,8 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
 				defer
 				data-website-id="ebb6ad49-b14c-443e-8ae1-38aebeac7aaf"
 				data-domains="bolingen.me"
-				src="/stats/us.js"></script>
+				src="/stats/us.js"
+			></script>
 		</head>
 
 		<body>

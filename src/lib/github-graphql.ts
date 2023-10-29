@@ -1,6 +1,6 @@
 import ky from "ky";
 
-import selectedProjects from "./selected-projects";
+import { selectedProjects } from "./selected-projects";
 
 export interface ErrorDetails {
 	path: string[];
@@ -25,18 +25,20 @@ export const fetchGithub = async <TReturn extends QueryResult>(
 				headers: {
 					Authorization: `bearer ${token}`
 				},
-				json: { query: query.replace(/\s+/g, " "), variables }
+				json: { query: query.replaceAll(/\s+/g, " "), variables }
 			})
 			.json<TReturn>();
 
 		if (result.errors != null) {
-			console.error(result.errors.map(it => it.message).join("\n"));
+			process.stderr.write(
+				`${result.errors.map((it) => it.message).join("\n")}\n`
+			);
 			return;
 		}
 
 		return result;
-	} catch (ex) {
-		console.error("Failed to fetch from GitHub. ", ex);
+	} catch (error) {
+		process.stderr.write(`Failed to fetch from GitHub. ${String(error)}\n`);
 	}
 };
 
@@ -96,14 +98,14 @@ query($repoCount: Int!) {
 	const result = await fetchGithub<RepositoriesResult>(query, { repoCount });
 
 	return result?.data?.viewer.repositories.edges
-		.map(edge => {
+		.map((edge) => {
 			if (edge.node.homepageUrl == null) {
 				edge.node.homepageUrl = "";
 			}
 
 			return edge.node;
 		})
-		.filter(repo => Object.keys(selectedProjects).includes(repo.name));
+		.filter((repo) => Object.keys(selectedProjects).includes(repo.name));
 };
 
 interface RepositoryResult {

@@ -1,7 +1,8 @@
 import classes from "clsx";
-import { Route } from "next";
+import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import React from "react";
 import { ChevronRight } from "react-feather";
 
 import styles from "./nav-link.module.css";
@@ -11,7 +12,10 @@ interface NavLinkProps<T extends string> {
 	target: Route<T>;
 }
 
-const NavLink = <T extends string>({ text, target }: NavLinkProps<T>) => {
+export const NavLink = <T extends string>({
+	text,
+	target
+}: NavLinkProps<T>): JSX.Element => {
 	const pathname = usePathname();
 
 	return (
@@ -20,7 +24,8 @@ const NavLink = <T extends string>({ text, target }: NavLinkProps<T>) => {
 			className={classes(
 				styles.navLink,
 				pathname === target && styles.navLinkActive
-			)}>
+			)}
+		>
 			<span className={styles.navLinkBefore}>
 				<ChevronRight size="10" />
 			</span>
@@ -28,5 +33,3 @@ const NavLink = <T extends string>({ text, target }: NavLinkProps<T>) => {
 		</Link>
 	);
 };
-
-export default NavLink;

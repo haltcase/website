@@ -4,15 +4,16 @@ import avatarImage from "@public/avatar.jpg";
 import classes from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { FC, useState } from "react";
+import type { FC } from "react";
+import { useState } from "react";
 import { Menu, X } from "react-feather";
 
-import links from "@/client-data/nav-links";
-import NavLink from "@/components/NavLink";
+import { links } from "@/client-data/nav-links";
+import { NavLink } from "@/components/NavLink";
 
 import styles from "./header.module.css";
 
-const Header: FC = () => {
+export const Header: FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const onMenuClick = (): void => setIsOpen(!isOpen);
@@ -37,7 +38,7 @@ const Header: FC = () => {
 			</span>
 			*/}
 
-				{links.map(link => (
+				{links.map((link) => (
 					<NavLink {...link} key={link.target} />
 				))}
 
@@ -48,5 +49,3 @@ const Header: FC = () => {
 		</header>
 	);
 };
-
-export default Header;

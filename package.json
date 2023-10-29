@@ -1,44 +1,41 @@
 {
-	"private": true,
 	"name": "@haltcase/website",
 	"version": "1.0.0",
+	"private": true,
 	"license": "MIT",
 	"type": "module",
-	"engines": {
-		"node": "18"
-	},
 	"scripts": {
-		"dev": "next",
 		"build": "next build",
+		"dev": "next",
+		"format": "eslint --fix --ignore-path .gitignore . && prettier --write .",
+		"lint": "eslint --ignore-path .gitignore . && prettier --list-different .",
 		"start": "next start",
-		"typecheck": "tsc",
-		"lint": "eslint --ignore-path .gitignore . && prettier --list-different --ignore-path .gitignore .",
-		"format": "eslint --fix --ignore-path .gitignore . && prettier --write --ignore-path .gitignore ."
+		"typecheck": "tsc"
 	},
+	"prettier": "@haltcase/style/prettier",
 	"dependencies": {
-		"@icons-pack/react-simple-icons": "^5.11.0",
-		"clsx": "^1.2.1",
-		"ky": "^0.33.3",
-		"next": "^13.4.1",
+		"@icons-pack/react-simple-icons": "^9.1.0",
+		"clsx": "^2.0.0",
+		"ky": "^1.1.2",
+		"next": "^13.5.6",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-feather": "^2.0.10",
-		"sharp": "^0.32.1"
+		"sharp": "^0.32.6"
 	},
 	"devDependencies": {
-		"@next/eslint-plugin-next": "^13.4.1",
-		"@types/node": "^20.1.0",
-		"@types/react": "^18.2.6",
-		"@types/react-dom": "^18.2.4",
-		"@typescript-eslint/eslint-plugin": "^5.59.2",
-		"@typescript-eslint/parser": "^5.59.2",
-		"eslint": "^8.40.0",
-		"eslint-config-prettier": "^8.8.0",
-		"eslint-plugin-react": "^7.32.2",
-		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"@haltcase/style": "4.0.0",
+		"@next/eslint-plugin-next": "^13.5.6",
+		"@types/node": "^20.8.9",
+		"@types/react": "^18.2.33",
+		"@types/react-dom": "^18.2.14",
+		"eslint": "^8.52.0",
 		"postcss-flexbugs-fixes": "^5.0.2",
-		"postcss-preset-env": "^8.3.2",
-		"prettier": "^2.8.8",
-		"typescript": "^5.0.4"
+		"postcss-preset-env": "^9.2.0",
+		"prettier": "^3.0.3",
+		"typescript": "^5.2.2"
+	},
+	"engines": {
+		"node": "18"
 	}
 }

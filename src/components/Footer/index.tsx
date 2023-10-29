@@ -1,15 +1,15 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { Code } from "react-feather";
 
-import socialLinks from "@/client-data/social-links";
-import IconLink from "@/components/IconLink";
+import { socialLinks } from "@/client-data/social-links";
+import { IconLink } from "@/components/IconLink";
 
 import styles from "./footer.module.css";
 
 const getCopyrightDate = (currentYear: number): string =>
 	currentYear === 2020 ? "2020" : `2020-${currentYear}`;
 
-const Footer: FC = () => (
+export const Footer: FC = () => (
 	<footer className={styles.footer}>
 		<div>
 			<ul className={styles.iconList}>
@@ -43,5 +43,3 @@ const Footer: FC = () => (
 		</div>
 	</footer>
 );
-
-export default Footer;

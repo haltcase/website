@@ -1,34 +1,23 @@
-import type { Icon as SimpleIcon } from "@icons-pack/react-simple-icons";
-import { FC } from "react";
-import { Icon as FeatherIcon } from "react-feather";
+import type { IconType } from "@icons-pack/react-simple-icons/types";
+import type { FC } from "react";
+import type { Icon as FeatherIcon } from "react-feather";
 
-interface Props {
-	href: string;
-	Icon: typeof SimpleIcon | FeatherIcon;
-	title?: string;
+interface IconLinkProps extends React.ComponentProps<"a"> {
+	Icon: IconType | FeatherIcon;
 	size?: string;
-	rel?: string;
-	target?: string;
 	className?: string;
 }
 
-const IconLink: FC<Props> = ({
-	href,
+export const IconLink: FC<IconLinkProps> = ({
 	Icon,
-	title = "",
 	size = "18",
+	className,
+	// eslint-disable-next-line unicorn/prevent-abbreviations
 	rel = "noreferrer",
 	target = "_blank",
-	className
+	...rest
 }) => (
-	<a
-		className={`icon ${className}`}
-		href={href}
-		title={title}
-		rel={rel}
-		target={target}>
+	<a className={`icon ${className}`} rel={rel} target={target} {...rest}>
 		<Icon size={size} />
 	</a>
 );
-
-export default IconLink;

@@ -1,6 +1,6 @@
 import type { MessageList } from "../components/MessageCycle";
 
-const skills: MessageList = [
+export const skills = [
 	"programming",
 	"web design",
 	"JavaScript",
@@ -14,6 +14,4 @@ const skills: MessageList = [
 	"email campaigns",
 	"process improvement",
 	"automation"
-];
-
-export default skills;
+] satisfies MessageList;

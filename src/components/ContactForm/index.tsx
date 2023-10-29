@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import { ChangeEvent, FC, useState } from "react";
+import type { ChangeEvent, FC } from "react";
+import { useState } from "react";
 
 import styles from "./contact-form.module.css";
 
@@ -12,7 +13,7 @@ const validators = {
 	message: (value: string) => value.length > 1
 };
 
-const ContactForm: FC = () => {
+export const ContactForm: FC = () => {
 	const router = useRouter();
 
 	const [name, setName] = useState("");
@@ -53,7 +54,8 @@ const ContactForm: FC = () => {
 				name="contact"
 				action="/contact?success=true"
 				method="POST"
-				data-netlify="true">
+				data-netlify="true"
+			>
 				<input type="hidden" name="form-name" value="contact" />
 				<p>
 					<label htmlFor="name">Name:</label>
@@ -102,5 +104,3 @@ const ContactForm: FC = () => {
 		</section>
 	);
 };
-
-export default ContactForm;

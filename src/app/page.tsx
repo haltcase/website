@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import Content from "@/components/Content";
-import Main from "@/components/Main";
-import MessageCycle from "@/components/MessageCycle";
+import { Content } from "@/components/Content";
+import { Main } from "@/components/Main";
+import { MessageCycle } from "@/components/MessageCycle";
 
 import styles from "./index.module.css";
 
@@ -17,7 +17,8 @@ const IndexPage: React.FC = () => (
 		<Content
 			Header="hello &mdash; my name is bo"
 			className={styles.frontPageContent}
-			headerClassName={styles.frontPageContentHeader}>
+			headerClassName={styles.frontPageContentHeader}
+		>
 			<h4 className={styles.frontPageContentActions}>
 				<MessageCycle
 					messages={actions}
@@ -33,7 +34,8 @@ const IndexPage: React.FC = () => (
 					href="https://www.seachangemn.com"
 					target="_blank"
 					rel="noreferrer"
-					data-umami-event="intro-seachange-link">
+					data-umami-event="intro-seachange-link"
+				>
 					SeaChange Print Innovations
 				</a>{" "}
 				by day, and a developer by night. Well, also day. Extending into the

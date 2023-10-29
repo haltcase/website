@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import Content from "@/components/Content";
-import Main from "@/components/Main";
+import { Content } from "@/components/Content";
+import { Main } from "@/components/Main";
 
 import styles from "./not-found.module.css";
 
@@ -14,7 +14,8 @@ const NotFoundPage: React.FC = () => (
 		<Content
 			Header="404"
 			className={styles.content}
-			headerClassName={styles.header}>
+			headerClassName={styles.header}
+		>
 			<p className={styles.errorBody}>
 				This page could not be found.
 				<Link href="/" className={styles.returnButton}>
