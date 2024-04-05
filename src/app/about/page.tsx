@@ -50,15 +50,16 @@ const AboutPage: FC = () => (
 				<span className="italic">communication skills</span>, and{" "}
 				<span className="italic">project management</span>. After finishing my
 				degree I started my career in print &amp; mail in the Minneapolis area,
-				and am currently an engineer on the GATHER platform for{" "}
+				and am currently the Lead Developer at{" "}
 				<a
 					href="https://www.seachangemn.com"
 					target="_blank"
 					rel="noreferrer"
 					data-umami-event="about-seachange-link"
 				>
-					SeaChange Print Innovations.
+					SeaChange
 				</a>
+				.
 			</p>
 
 			<p>

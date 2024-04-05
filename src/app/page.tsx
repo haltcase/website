@@ -29,17 +29,16 @@ const IndexPage: React.FC = () => (
 			</h4>
 
 			<p>
-				I am an engineer on the GATHER platform at{" "}
+				I am the Lead Developer at{" "}
 				<a
 					href="https://www.seachangemn.com"
 					target="_blank"
 					rel="noreferrer"
 					data-umami-event="intro-seachange-link"
 				>
-					SeaChange Print Innovations
-				</a>{" "}
-				by day, and a developer by night. Well, also day. Extending into the
-				night. Please feel free to{" "}
+					SeaChange
+				</a>
+				. Please feel free to{" "}
 				<Link href="/about" data-umami-event="intro-about">
 					read more about me
 				</Link>
