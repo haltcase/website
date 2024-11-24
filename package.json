@@ -15,27 +15,27 @@
 	"prettier": "@haltcase/style/prettier",
 	"dependencies": {
 		"@icons-pack/react-simple-icons": "^10.2.0",
-		"clsx": "^2.0.0",
-		"ky": "^1.1.2",
+		"clsx": "^2.1.1",
+		"ky": "^1.7.2",
 		"next": "^13.5.6",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
 		"react-feather": "^2.0.10",
-		"sharp": "^0.32.6"
+		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
-		"@haltcase/style": "4.0.0",
+		"@haltcase/style": "6.2.1",
 		"@next/eslint-plugin-next": "^13.5.6",
-		"@types/node": "^20.8.9",
-		"@types/react": "^18.2.33",
-		"@types/react-dom": "^18.2.14",
-		"eslint": "^8.52.0",
+		"@types/node": "^20.17.7",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
+		"eslint": "^8.57.1",
 		"postcss-flexbugs-fixes": "^5.0.2",
-		"postcss-preset-env": "^9.2.0",
-		"prettier": "^3.0.3",
-		"typescript": "^5.2.2"
+		"postcss-preset-env": "^10.1.1",
+		"prettier": "^3.3.3",
+		"typescript": "^5.7.2"
 	},
 	"engines": {
-		"node": "18"
+		"node": "20"
 	}
 }
