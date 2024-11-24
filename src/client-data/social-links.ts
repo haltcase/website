@@ -1,8 +1,8 @@
 import {
+	SiBluesky,
 	SiGithub,
 	SiLinkedin,
-	SiMastodon,
-	SiTwitter
+	SiMastodon
 } from "@icons-pack/react-simple-icons";
 import type { IconType } from "@icons-pack/react-simple-icons/types";
 import type { Icon as FeatherIcon } from "react-feather";
@@ -21,15 +21,15 @@ export const socialLinks: Readonly<Record<string, SocialLink>> = Object.freeze({
 		Icon: SiGithub,
 		callout: "Follow on"
 	},
+	Bluesky: {
+		href: "https://bsky.haltcase.dev",
+		Icon: SiBluesky,
+		callout: "Reach out on"
+	},
 	Mastodon: {
 		href: "https://hachyderm.io/@haltcase",
 		Icon: SiMastodon,
 		callout: "Boost on"
-	},
-	Twitter: {
-		href: "https://twitter.com/haltcase",
-		Icon: SiTwitter,
-		callout: "Reach out on"
 	},
 	Email: {
 		href: "mailto:bo@haltcase.dev",
