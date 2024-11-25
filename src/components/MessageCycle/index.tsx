@@ -1,6 +1,6 @@
 "use client";
 
-import type { FC, MutableRefObject } from "react";
+import type { FC, RefObject } from "react";
 import { useEffect, useRef, useState } from "react";
 
 export interface MessageData {
@@ -67,7 +67,7 @@ export const MessageCycle: FC<MessageListProps> = ({
 	const [speed, setSpeed] = useState(typingSpeed);
 	const [loop, setLoop] = useState(0);
 
-	const innerTimer: MutableRefObject<NodeJS.Timeout | undefined> = useRef();
+	const innerTimer: RefObject<NodeJS.Timeout | null> = useRef(null);
 
 	const index = loop % messages.length;
 	const linkTarget = getLinkTarget(messages[index]);
