@@ -48,8 +48,10 @@
 .logoContainer img {
 	margin-right: 1rem;
 	border-radius: 50%;
-	width: 100%;
+	width: auto;
 	height: 100%;
+	aspect-ratio: 1;
+	object-fit: contain;
 }
 
 .navMenu {
