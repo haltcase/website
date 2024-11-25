@@ -1,6 +1,4 @@
-"use strict";
-
-module.exports = {
+export default {
 	plugins: {
 		"postcss-flexbugs-fixes": {},
 		"postcss-preset-env": {

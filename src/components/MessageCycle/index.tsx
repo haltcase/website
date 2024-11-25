@@ -8,7 +8,7 @@ export interface MessageData {
 	href?: string;
 }
 
-export type MessageList = Array<string | MessageData>;
+export type MessageList = (string | MessageData)[];
 
 interface MessageListProps {
 	/** List of messages to cycle through */
@@ -43,7 +43,7 @@ const getMessage = (messageOrData: string | MessageData): string =>
 	typeof messageOrData === "string" ? messageOrData : messageOrData.text;
 
 const getLinkTarget = (messageOrData: string | MessageData): string =>
-	typeof messageOrData === "string" ? "#" : messageOrData.href ?? "#";
+	typeof messageOrData === "string" ? "#" : (messageOrData.href ?? "#");
 
 export const MessageCycle: FC<MessageListProps> = ({
 	messages = [],

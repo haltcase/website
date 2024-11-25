@@ -5,7 +5,7 @@ import { selectedProjects } from "./selected-projects";
 export interface ErrorDetails {
 	path: string[];
 	extensions: { code: string; variableName: string };
-	locations: Array<{ line: number; column: number }>;
+	locations: { line: number; column: number }[];
 	message: string;
 }
 
@@ -58,9 +58,9 @@ export interface RepositoriesResult extends QueryResult {
 	data?: {
 		viewer: {
 			repositories: {
-				edges: Array<{
+				edges: {
 					node: Repository;
-				}>;
+				}[];
 			};
 		};
 	};
@@ -98,13 +98,7 @@ query($repoCount: Int!) {
 	const result = await fetchGithub<RepositoriesResult>(query, { repoCount });
 
 	return result?.data?.viewer.repositories.edges
-		.map((edge) => {
-			if (edge.node.homepageUrl == null) {
-				edge.node.homepageUrl = "";
-			}
-
-			return edge.node;
-		})
+		.map((edge) => edge.node)
 		.filter((repo) => Object.keys(selectedProjects).includes(repo.name));
 };
 

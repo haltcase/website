@@ -1,10 +1,7 @@
-/**
- * @type {import("next").NextConfig}
- */
+/* eslint-disable @typescript-eslint/require-await */
+import type { NextConfig } from "next";
+
 const nextConfig = {
-	experimental: {
-		typedRoutes: true
-	},
 	redirects: async () => [
 		{
 			source: "/.well-known/webfinger:path*",
@@ -19,6 +16,6 @@ const nextConfig = {
 			destination: "https://stats.bolingen.me/:match*"
 		}
 	]
-};
+} satisfies NextConfig;
 
 export default nextConfig;

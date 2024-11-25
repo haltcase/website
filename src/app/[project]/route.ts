@@ -7,20 +7,22 @@ import { fetchRepo } from "@/lib/github-graphql";
 export const revalidate = 600;
 
 interface ProjectRouteContext {
-	params: {
+	params: Promise<{
 		project: string;
-	};
+	}>;
 }
 
 export const GET = async (
 	_request: NextRequest,
 	context: ProjectRouteContext
 ) => {
-	if (context.params == null || context.params.project == null) {
+	const { project } = await context.params;
+
+	if (!project) {
 		notFound();
 	}
 
-	const info = await fetchRepo(String(context.params.project));
+	const info = await fetchRepo(project);
 
 	if (info == null) {
 		notFound();

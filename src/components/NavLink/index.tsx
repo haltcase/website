@@ -15,7 +15,7 @@ interface NavLinkProps<T extends string> {
 export const NavLink = <T extends string>({
 	text,
 	target
-}: NavLinkProps<T>): JSX.Element => {
+}: NavLinkProps<T>): React.ReactNode => {
 	const pathname = usePathname();
 
 	return (

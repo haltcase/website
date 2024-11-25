@@ -6,7 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "next build",
-		"dev": "next",
+		"dev": "next dev --turbopack",
 		"format": "eslint --fix --ignore-path .gitignore . && prettier --write .",
 		"lint": "eslint --ignore-path .gitignore . && prettier --list-different .",
 		"start": "next start",
@@ -17,18 +17,18 @@
 		"@icons-pack/react-simple-icons": "^10.2.0",
 		"clsx": "^2.1.1",
 		"ky": "^1.7.2",
-		"next": "^13.5.6",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
+		"next": "15.0.3",
+		"react": "19.0.0-rc-66855b96-20241106",
+		"react-dom": "19.0.0-rc-66855b96-20241106",
 		"react-feather": "^2.0.10",
 		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
 		"@haltcase/style": "6.2.1",
-		"@next/eslint-plugin-next": "^13.5.6",
+		"@next/eslint-plugin-next": "15.0.3",
 		"@types/node": "^20.17.7",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
+		"@types/react": "npm:types-react@19.0.0-rc.1",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
 		"eslint": "^8.57.1",
 		"postcss-flexbugs-fixes": "^5.0.2",
 		"postcss-preset-env": "^10.1.1",
@@ -37,5 +37,11 @@
 	},
 	"engines": {
 		"node": "20"
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "npm:types-react@19.0.0-rc.1",
+			"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+		}
 	}
 }
