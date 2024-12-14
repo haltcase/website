@@ -35,7 +35,7 @@
 <button
 	{...rest}
 	class={cx(
-		"ring-theme-primary dark:ring-theme-dark-primary flex cursor-pointer flex-row items-center justify-center rounded-full outline-none focus-visible:ring-2",
+		"ring-primary hover:text-primary flex cursor-pointer flex-row items-center justify-center rounded-full outline-none hover:border focus-visible:ring-2",
 		className,
 		classes.root
 	)}
