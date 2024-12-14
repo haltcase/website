@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import avatarImage from "@/assets/img/avatar.jpg";
+import Content from "@/components/Content.astro";
+import Divider from "@/components/Divider.astro";
+import Main from "@/components/Main.astro";
+import Layout from "@/layouts/Layout.astro";
+import MessageCycle from "@/components/MessageCycle.svelte";
+import { skills } from "@/data/skills";
+---
+
+<Layout title="About">
+	<Main>
+		<Content headingText="about me">
+			<div class="group relative max-h-20 pr-8" slot="heading-adorner">
+				<div
+					class="absolute top-0 -left-8 flex translate-y-1/2 flex-col items-center opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+				>
+					<span>bo</span>
+					<Icon name="tabler:arrow-right" size="14" />
+				</div>
+
+				<Image
+					class="aspect-square h-full max-h-[inherit] w-full rounded-full"
+					src={avatarImage}
+					alt=""
+				/>
+			</div>
+
+			<p
+				class="text-primary text-4xl max-sm:my-4 max-sm:flex max-sm:h-36 max-sm:items-center max-sm:leading-10"
+			>
+				<MessageCycle
+					client:load
+					messages={skills}
+					staticPrefix="I do "
+					staticSuffix="."
+					cursor="|"
+					interval={4000}
+					classes={{
+						cursor: "text-3xl"
+					}}
+				/>
+			</p>
+
+			<p>
+				I graduated with a degree in Graphic Communications Management (GCM),
+				which is a print industry triple threat of
+				<span class="italic">graphic design</span>,
+				<span class="italic">communication skills</span>, and
+				<span class="italic">project management</span>. After finishing my
+				degree I started my career in print &amp; mail in the Minneapolis area,
+				and am currently the Lead Developer at
+				<a
+					href="https://www.seachangemn.com"
+					target="_blank"
+					rel="noreferrer"
+					data-umami-event="about-seachange-link">SeaChange</a
+				>.
+			</p>
+
+			<p>
+				My career thus far has gotten me shouldered up to print-for-mail and
+				given me opportunities to develop applications, automations, and
+				processes. I am experienced in web design, including the design of email
+				campaigns, and the web languages of HTML, CSS, and JavaScript /
+				TypeScript. I have also become familiar with .NET programming, having
+				developed applications in C#, F#, and PowerShell for various
+				environments&mdash;including command line interfaces, complex desktop
+				applications, and automation workflows.
+			</p>
+
+			<Divider class="w-1/4" />
+
+			<h3>personal</h3>
+
+			<p>
+				I spend most of my time creating things, like programming, writing, or
+				producing music. I’ve written open source libraries and designed
+				websites. I’ve written short stories. I’ve made instrumentals and
+				recorded vocals over a couple dozen musical tracks and explored making
+				film scores.
+			</p>
+
+			<p>
+				I consider my interest and skills in web design to be due, at least in
+				part, to GeoCities websites and MySpace pages.
+			</p>
+
+			<p>
+				I believe in science. I love space and would maybe consider being on the
+				third or fourth trip to Mars.
+			</p>
+
+			<p>
+				Kurt Vonnegut and Stephen King still compete with one another for the
+				title of my favorite author, despite the former’s death in 2007
+				(although that only counts for those of you living through time
+				linearly).
+			</p>
+
+			<Divider class="w-1/4" />
+
+			<h3>this site</h3>
+
+			<p>
+				This site was built mostly with my hands (but also my brain and eyes)
+				using Astro, TypeScript, and a sprinkling of Svelte.
+			</p>
+
+			<blockquote
+				class="text-fg/70 mx-auto mt-12 mb-4 text-center text-xs tracking-widest"
+			>
+				To HTML’s <code>blink</code> and beyond.
+			</blockquote>
+		</Content>
+	</Main>
+</Layout>
+
+<style>
+	p:not(:first-of-type) {
+		&::after {
+			opacity: 0;
+			transition: opacity 0.2s ease-in-out;
+			margin-left: 0.5rem;
+			content: "\0000b6";
+		}
+
+		&:hover::after {
+			opacity: 0.8;
+		}
+	}
+</style>

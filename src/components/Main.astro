@@ -1,0 +1,9 @@
+---
+import type { WithClasses } from "@/lib/cx";
+
+interface Props extends WithClasses<"root"> {}
+---
+
+<main class="mx-auto my-8 flex justify-between md:w-4/5 md:flex-wrap">
+	<slot />
+</main>

@@ -1,0 +1,57 @@
+---
+import type { RenderableProjectData } from "@/lib/services/github";
+import { Icon } from "astro-icon/components";
+import IconLink from "./IconLink.astro";
+
+interface Props {
+	data: RenderableProjectData;
+}
+
+const { data } = Astro.props;
+const { Content } = data;
+---
+
+<section>
+	<h3 class="my-4 flex flex-row items-center gap-4 text-2xl font-semibold">
+		<span class="mr-4 mb-[0.25em]">{data.name}</span>
+
+		{
+			data.homepageUrl !== "" && (
+				<IconLink
+					href={data.homepageUrl}
+					icon="tabler:world"
+					title="Homepage"
+					data-umami-event={`projects-homepage-${data.name}`}
+				/>
+			)
+		}
+
+		{
+			data.url !== "" && (
+				<IconLink
+					href={data.url}
+					icon="tabler:code"
+					size="22"
+					title="Source"
+					data-umami-event={`projects-repo-${data.name}`}
+				/>
+			)
+		}
+
+		{
+			data.stargazerCount > 0 && (
+				<a
+					class="flex flex-row items-center gap-2 font-sans text-base font-normal no-underline"
+					href={`${data.url}/stargazers`}
+					title="GitHub Stars"
+					data-umami-event={`projects-stargazers-${data.name}`}
+				>
+					<Icon class="inline" name="tabler:star" />
+					<span class="mt-0.5 text-sm">{data.stargazerCount}</span>
+				</a>
+			)
+		}
+	</h3>
+
+	<Content />
+</section>

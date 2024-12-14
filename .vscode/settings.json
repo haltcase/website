@@ -1,22 +1,25 @@
 {
-	"[javascript][javascriptreact][typescript][typescriptreact][html][json][jsonc][css]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"files.associations": {
+		"*.css": "tailwindcss"
 	},
-	"editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll"],
-	"editor.formatOnSave": true,
-	"eslint.codeActionsOnSave.mode": "all",
-	"eslint.enable": true,
-	"eslint.format.enable": true,
 
-	"prettier.printWidth": 80,
-	"prettier.tabWidth": 2,
-	"prettier.useTabs": true,
-	"prettier.semi": true,
-	"prettier.singleQuote": false,
-	"prettier.trailingComma": "none",
-	"prettier.bracketSpacing": true,
-	"prettier.bracketSameLine": true,
-	"prettier.arrowParens": "always",
+	"workbench.editor.customLabels.patterns": {
+		"**/index.{astro,html,js,jsx,ts,tsx,md,mdx}": "${dirname}/${filename}"
+	},
 
-	"typescript.tsdk": "node_modules\\typescript\\lib"
+	"typescript.tsdk": "./node_modules/typescript/lib",
+
+	"tailwindCSS.classAttributes": [
+		"class",
+		"className",
+		"classNames",
+		"class:list",
+		"classes",
+		"ngClass",
+		".*Styles*",
+		".*ClassName",
+		"clsx\\(([^)]*)\\)",
+		"cx\\(([^)]*)\\)",
+		"(?:'|\"|`)([^']*)(?:'|\"|`)"
+	]
 }

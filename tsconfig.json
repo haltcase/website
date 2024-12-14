@@ -1,23 +1,13 @@
 {
-	"extends": "@haltcase/style/typescript/next",
+	"extends": ["astro/tsconfigs/strict"],
+
 	"compilerOptions": {
 		"baseUrl": "src",
 		"paths": {
-			"@/*": ["./*"],
-			"@public/*": ["../public/*"]
+			"@/*": ["./*"]
 		}
 	},
-	"exclude": ["node_modules"],
-	"include": [
-		"**/*.ts",
-		"**/*.tsx",
-		"**/*.js",
-		"**/*.jsx",
-		"**/*.mjs",
-		".*.js",
-		".eslintrc.cjs",
-		".next/types/**/*.ts",
-		"next.config.ts",
-		"postcss.config.ts"
-	]
+
+	"include": [".astro/types.d.ts", "src/pages/.well-known/**/*", "**/*"],
+	"exclude": ["dist"]
 }

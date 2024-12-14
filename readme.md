@@ -1,13 +1,14 @@
-# personal website &middot; [![TypeScript](https://flat.badgen.net/badge/written%20in/TypeScript/294E80)](http://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+# personal website &middot; [![@haltcase/style](https://img.shields.io/static/v1?label=style&message=haltcase&color=0ca5ed&style=flat-square)](https://haltcase.dev/style)
 
-Source for my personal website, developed with React, TypeScript, and Next.js. It is currently deployed using [Vercel] at [bolingen.me][url].
+Source for my personal website. It's currently deployed using [Vercel] at [bolingen.me][url].
 
 ## Notable libraries / tools used
 
-- React
+- Astro
 - TypeScript
-- CSS Modules
-- GraphQL
+- Svelte
+- Tailwind
+- GraphQL (GitHub API)
 
 [url]: https://bolingen.me
 [vercel]: https://vercel.com/home

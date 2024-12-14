@@ -1,0 +1,29 @@
+---
+import type { ComponentProps } from "astro/types";
+import IconLink from "./IconLink.astro";
+
+interface LinkProps extends ComponentProps<typeof IconLink> {
+	key: string;
+}
+
+interface Props {
+	data: LinkProps[];
+}
+
+const { data } = Astro.props;
+---
+
+<ul class="flex flex-row justify-center gap-4 py-2">
+	{
+		data.map((link) => (
+			<li>
+				<IconLink
+					{...link}
+					title={link.key}
+					rel="me noopener"
+					data-umami-event={`footer-${link.key.toLowerCase()}`}
+				/>
+			</li>
+		))
+	}
+</ul>

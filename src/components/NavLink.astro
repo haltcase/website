@@ -1,0 +1,44 @@
+---
+import type { NavLinkData } from "@/data/navLinks";
+import { cx, type WithClasses } from "@/lib/cx";
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+
+interface Props
+	extends WithClasses<"root" | "before" | "icon" | "label", NavLinkData> {}
+
+const { text, target, class: className, classes = {} } = Astro.props;
+
+const { pathname } = Astro.url;
+
+const isActive = pathname === target;
+---
+
+<Link
+	class={cx([
+		"group px-8 inline-flex items-center justify-center no-underline transition",
+		"after:absolute after:h-[2px] after:top-9/10 after:left-0 after:bg-primary after:w-0 after:opacity-50 after:transition-all",
+		"hover:after:left-1/20 hover:after:w-9/10 hover:after:opacity-100",
+		isActive && "after:opacity-50 after:w-1/2 after:left-1/4",
+		className,
+		classes.root
+	])}
+	href={target}
+>
+	<span class={cx(["w-0", classes.before])}>
+		<Icon
+			class={cx([
+				"text-primary translate-x-0 scale-x-0 opacity-0 transition-all group-hover:-translate-x-full group-hover:scale-x-100 group-hover:opacity-100",
+				classes.icon
+			])}
+			name="tabler:chevron-right"
+		/>
+	</span>
+
+	<span
+		class={cx([
+			"inline-block font-medium tracking-tight lowercase",
+			classes.label
+		])}>{text}</span
+	>
+</Link>
