@@ -7,7 +7,8 @@ export const prerender = false;
 const getProxyUrl = (request: Request) => {
 	const proxyUrl = new URL(STATS_URL);
 	const requestUrl = new URL(request.url);
-	return new URL(requestUrl.pathname, proxyUrl);
+	const basePath = requestUrl.pathname.replace("/stats", "");
+	return new URL(basePath, proxyUrl);
 };
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
