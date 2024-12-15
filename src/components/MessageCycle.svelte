@@ -90,7 +90,7 @@
 </script>
 
 <span
-	class={cx("inline-flex items-center", className, classes.root)}
+	class={cx("", className, classes.root)}
 	role="none"
 	onmouseenter={() => {
 		isPaused = true;
@@ -99,14 +99,14 @@
 		isPaused = false;
 	}}
 >
-	<span class={cx("mr-[0.5ch]", classes.prefix)}>{staticPrefix}</span>
-
-	{#if link === "#"}
+	<!--
+	this formatting looks absolutely horrible, but we can't introduce whitespace
+	without breaking user intuition of spaces in the prefix or suffix text
+	-->
+	<span class={cx("", classes.prefix)}>{staticPrefix}</span>{#if link === "#"}
 		<span class={cx(classes.message)}>{text}</span>
 	{:else}
-		<a class={cx(classes.message)} href={link}>{text}</a>
-	{/if}
-
-	<span class={cx(classes.suffix)}>{staticSuffix}</span>
-	<span class={cx(classes.cursor)}>{cursor}</span>
+		<a class={cx(classes.message)} href={link}>{text}</a>{/if}<span
+		class={cx("", classes.suffix)}>{staticSuffix}</span
+	><span class={cx(classes.cursor)}>{cursor}</span>
 </span>
