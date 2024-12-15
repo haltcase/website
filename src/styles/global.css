@@ -1,6 +1,7 @@
 @import "@fontsource-variable/overpass";
 @import "@fontsource-variable/playfair-display";
 @import "tailwindcss";
+@source "../**/*.svelte";
 
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
