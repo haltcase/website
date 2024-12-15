@@ -14,11 +14,13 @@
 	--color-secondary: oklch(0.46 0.06 225.22 / 1);
 	--color-three: oklch(0.56 0.18 31.9 / 1);
 
-	--spacing-header: 3rem;
-	--spacing-content: 900px;
+	--breakpoint-xs: 365px;
 
 	--font-sans: "Overpass Variable", sans-serif;
 	--font-serif: "Playfair Display Variable", serif;
+
+	--spacing-header: 3rem;
+	--spacing-content: 900px;
 
 	--text-2xs: 0.6rem;
 
