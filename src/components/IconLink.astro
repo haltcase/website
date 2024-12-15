@@ -19,6 +19,15 @@ const {
 } = Astro.props;
 ---
 
-<a class={cx(className, classes.root)} {rel} {target} {...rest}>
+<a
+	class={cx(
+		"inline-block ring-primary ring-offset-bg rounded-full ring-offset-4 outline-none focus-visible:bg-bg focus-visible:ring-1",
+		className,
+		classes.root
+	)}
+	{rel}
+	{target}
+	{...rest}
+>
 	<Icon class={cx("icon", classes.icon)} name={icon} {size} />
 </a>

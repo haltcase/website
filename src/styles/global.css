@@ -62,5 +62,15 @@
 		&:hover {
 			color: var(--color-primary);
 		}
+
+		&:focus-visible {
+			@apply bg-primary dark:bg-secondary not-dark:decoration-secondary ring-offset-primary dark:ring-offset-secondary rounded-sm ring-1 ring-offset-1;
+
+			outline: none;
+
+			&:hover {
+				color: inherit;
+			}
+		}
 	}
 }
