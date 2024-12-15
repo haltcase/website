@@ -24,14 +24,6 @@
 		staticSuffix?: string;
 		/** String of text to use as the cursor character. */
 		cursor?: string;
-		/** `class` to apply to the static prefix text. */
-		staticPrefixClass?: string;
-		/** `class` to apply to the static suffix text. */
-		staticSuffixClass?: string;
-		/** `class` to apply to the main message text. */
-		messageClass?: string;
-		/** `class` to apply to the cursor text. */
-		cursorClass?: string;
 	}
 
 	const getMessage = (messageOrData: string | MessageData): string =>
