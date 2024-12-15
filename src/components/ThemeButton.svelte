@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type WithClasses } from "@/lib/cx";
+	import { cx, type WithClasses } from "@/lib/cx";
 	import type { HTMLButtonAttributes, SVGAttributes } from "svelte/elements";
 	import ThemeToggle from "./ThemeToggle.svelte";
 	import { spin } from "./transitions/spin";
@@ -14,6 +14,12 @@
 <ThemeToggle {...rest}>
 	{#snippet theme(currentTheme)}
 		<svg
+			class={cx(
+				"transition-all",
+				currentTheme === "dark"
+					? "drop-shadow-[0_0_0_var(--color-yellow-200)] hover:text-yellow-400 hover:drop-shadow-[0_0_6px_var(--color-yellow-200)]"
+					: "drop-shadow-[0_0_0_var(--color-sky-600)] hover:text-sky-800 hover:drop-shadow-[0_0_6px_var(--color-sky-600)]"
+			)}
 			xmlns="http://www.w3.org/2000/svg"
 			width={iconSize}
 			height={iconSize}
