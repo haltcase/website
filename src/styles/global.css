@@ -73,4 +73,9 @@
 			}
 		}
 	}
+
+	::selection {
+		color: var(--color-fg);
+		background-color: var(--color-secondary);
+	}
 }
