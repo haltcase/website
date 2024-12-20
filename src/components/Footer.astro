@@ -1,0 +1,38 @@
+---
+import { socialLinks } from "@/data/socialLinks";
+import type { ComponentProps } from "astro/types";
+import IconLinkRow from "./IconLinkRow.astro";
+
+const originYear = 2020;
+const currentYear = new Date().getFullYear();
+const copyrightDate =
+	originYear === currentYear ? originYear : `${originYear}–${currentYear}`;
+
+const socialIconRow = Object.entries(socialLinks).map(
+	([title, { icon, href }]) => ({
+		key: title,
+		icon,
+		href
+	})
+) satisfies ComponentProps<typeof IconLinkRow>["data"];
+---
+
+<footer
+	class="mx-auto mt-8 mb-20 flex w-4/5 flex-col justify-center gap-2 pt-1 text-center"
+>
+	<IconLinkRow data={socialIconRow} />
+
+	<p class="text-2xs tracking-widest uppercase">
+		&copy; {copyrightDate} Bo Lingen
+	</p>
+
+	<IconLinkRow
+		data={[
+			{
+				key: "Source at GitHub",
+				icon: "tabler:code",
+				href: "https://github.com/haltcase/website"
+			}
+		]}
+	/>
+</footer>

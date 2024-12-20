@@ -1,0 +1,57 @@
+---
+import { cx, type WithClasses } from "@/lib/cx";
+import Divider from "./Divider.astro";
+
+interface Props
+	extends WithClasses<
+		"root" | "headingContainer" | "heading" | "headingText" | "body"
+	> {
+	headingText?: string;
+	isSeamless?: boolean;
+}
+
+const {
+	headingText,
+	isSeamless,
+	class: className,
+	classes = {},
+	...rest
+} = Astro.props;
+---
+
+<section
+	class={cx([
+		"w-full max-w-content mx-auto",
+		!isSeamless && "border border-border bg-bg-lighter",
+		className,
+		classes.root
+	])}
+	{...rest}
+>
+	<section class={cx(["mb-5 min-h-28", classes.headingContainer])}>
+		<slot name="heading">
+			<div
+				class={cx(["flex justify-between items-center py-4", classes.heading])}
+			>
+				<h1
+					class={cx(["font-medium text-[2rem] py-4 px-8", classes.headingText])}
+				>
+					{headingText}
+				</h1>
+
+				<slot name="heading-adorner" />
+			</div>
+		</slot>
+
+		<Divider class="mt-0" />
+	</section>
+
+	<article
+		class={cx(
+			"py-4 px-8 [&_p]:leading-6 [&_p]:first-of-type:mt-0 flex flex-col gap-4",
+			classes.body
+		)}
+	>
+		<slot />
+	</article>
+</section>

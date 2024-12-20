@@ -1,0 +1,39 @@
+---
+import Content from "@/components/Content.astro";
+import Main from "@/components/Main.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { socialLinks } from "@/data/socialLinks";
+import Layout from "@/layouts/Layout.astro";
+import type { RenderableProjectData } from "@/lib/services/github";
+
+import { render } from "astro:content";
+import { getSelectedProjects } from "@/lib/services/github";
+
+const repos = await getSelectedProjects();
+
+const withContent = (await Promise.all(
+	repos.map(async (repo) => {
+		const { Content } = await render(repo.entry);
+
+		return {
+			...repo,
+			Content
+		};
+	})
+)) satisfies RenderableProjectData[];
+---
+
+<Layout title="Projects">
+	<Main>
+		<Content headingText="projects">
+			<p class="text-sm italic">
+				For a full list of my programming projects, please visit my
+				<a href={socialLinks.GitHub.href} data-umami-event="projects-github"
+					>GitHub profile</a
+				>.
+			</p>
+
+			{withContent.map((data) => <ProjectCard data={data} />)}
+		</Content>
+	</Main>
+</Layout>

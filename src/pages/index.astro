@@ -1,0 +1,49 @@
+---
+import Content from "@/components/Content.astro";
+import Link from "@/components/Link.astro";
+import Main from "@/components/Main.astro";
+import MessageCycle from "@/components/MessageCycle.svelte";
+import Layout from "@/layouts/Layout.astro";
+
+const actions = ["program", "design", "improve", "automate"];
+---
+
+<Layout title="Bo Lingen">
+	<Main>
+		<Content
+			classes={{
+				heading:
+					"bg-linear-90 from-primary to-secondary bg-clip-text text-transparent"
+			}}
+			headingText="hello — my name is bo"
+			isSeamless
+		>
+			<h4>
+				<MessageCycle
+					client:load
+					messages={actions}
+					staticPrefix="I "
+					staticSuffix=" things."
+					interval={4000}
+				/>
+			</h4>
+
+			<p>
+				I am the Lead Developer at
+				<a
+					href="https://www.seachangemn.com"
+					target="_blank"
+					rel="noreferrer"
+					data-umami-event="intro-seachange-link">SeaChange</a
+				>. Please feel free to
+				<Link href="/about" data-umami-event="intro-about"
+					>read more about me</Link
+				>,
+				<Link href="/contact" data-umami-event="intro-contact">contact me</Link
+				>, or check out some of the
+				<Link href="/projects" data-umami-event="intro-projects">projects</Link>
+				I’ve worked on.
+			</p>
+		</Content>
+	</Main>
+</Layout>

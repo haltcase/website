@@ -1,0 +1,26 @@
+---
+import Button from "@/components/Button.astro";
+import Content from "@/components/Content.astro";
+import Main from "@/components/Main.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import { $path } from "astro-typesafe-routes";
+---
+
+<Layout title="Not found">
+	<Main>
+		<Content
+			headingText="404"
+			isSeamless
+			classes={{
+				heading: "w-full justify-center dark:text-blue",
+				headingText: "font-black text-6xl -tracking-widest",
+				body: "items-center"
+			}}
+		>
+			<p class="text-center">This page could not be found.</p>
+
+			<Button as="a" href={$path("/")}>home</Button>
+		</Content>
+	</Main>
+</Layout>

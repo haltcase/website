@@ -1,0 +1,21 @@
+---
+import { cx, type WithClasses } from "@/lib/cx";
+import type { Route } from "astro-typesafe-routes";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props
+	extends WithClasses<
+		"root",
+		HTMLAttributes<"a"> & {
+			href: Route;
+		}
+	> {}
+
+const { class: className, classes = {}, ...rest } = Astro.props;
+---
+
+{
+	/* be careful not to introduce whitespace within the `a` tag
+	see: https://github.com/withastro/prettier-plugin-astro/issues/308 */
+}
+<a class={cx(className, classes.root)} {...rest}><slot /></a>

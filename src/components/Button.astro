@@ -1,0 +1,31 @@
+---
+import { type WithClasses, cx } from "@/lib/cx";
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+type Props<TTag extends HTMLTag> = WithClasses<
+	"root",
+	Polymorphic<{ as: TTag }>
+>;
+
+const { as: Tag, class: className, classes = {}, ...rest } = Astro.props;
+---
+
+<Tag
+	class={cx(
+		"bg-primary/20 px-4 py-2 w-fit relative group/Button overflow-hidden no-underline cursor-pointer inline-block",
+		className,
+		classes.root
+	)}
+	{...Tag === "button" ? { type: "button" } : {}}
+	{...rest}
+>
+	<span
+		class="bg-fg absolute top-0 left-0 mb-0 h-full w-0 translate-y-0 transform opacity-90 transition-all duration-200 ease-out group-hover/Button:w-full dark:bg-black"
+	></span>
+
+	<span
+		class="group-hover/Button:text-bg dark:group-hover/Button:text-fg relative"
+	>
+		<slot />
+	</span>
+</Tag>

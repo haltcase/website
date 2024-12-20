@@ -1,0 +1,33 @@
+---
+import { cx, type WithClasses } from "@/lib/cx";
+import { Icon } from "astro-icon/components";
+
+interface Props
+	extends WithClasses<"root" | "icon", astroHTML.JSX.AnchorHTMLAttributes> {
+	icon: string;
+	size?: string;
+}
+
+const {
+	icon,
+	size = "18",
+	rel = "noreferrer",
+	target = "_blank",
+	class: className,
+	classes = {},
+	...rest
+} = Astro.props;
+---
+
+<a
+	class={cx(
+		"inline-block ring-primary ring-offset-bg rounded-full ring-offset-4 outline-none focus-visible:bg-bg focus-visible:ring-1",
+		className,
+		classes.root
+	)}
+	{rel}
+	{target}
+	{...rest}
+>
+	<Icon class={cx("icon", classes.icon)} name={icon} {size} />
+</a>

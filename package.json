@@ -1,47 +1,53 @@
 {
 	"name": "@haltcase/website",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"private": true,
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"build": "next build",
-		"dev": "next dev --turbopack",
-		"format": "eslint --fix --ignore-path .gitignore . && prettier --write .",
-		"lint": "eslint --ignore-path .gitignore . && prettier --list-different .",
-		"start": "next start",
-		"typecheck": "tsc"
+		"build": "astro build",
+		"dev": "astro dev",
+		"eslint:check": "eslint .",
+		"format": "eslint --fix . && prettier --write .",
+		"postinstall": "astro sync",
+		"lint": "pnpm eslint:check && pnpm prettier:check && typescript:check",
+		"prepare": "husky",
+		"prettier:check": "prettier --list-different .",
+		"start": "node ./dist/server/entry.mjs",
+		"typescript:check": "tsc --noEmit"
 	},
-	"prettier": "@haltcase/style/prettier",
+	"lint-staged": {
+		"*": "prettier --ignore-unknown --write"
+	},
 	"dependencies": {
-		"@icons-pack/react-simple-icons": "^10.2.0",
-		"clsx": "^2.1.1",
-		"ky": "^1.7.2",
-		"next": "15.0.3",
-		"react": "19.0.0-rc-66855b96-20241106",
-		"react-dom": "19.0.0-rc-66855b96-20241106",
-		"react-feather": "^2.0.10",
-		"sharp": "^0.33.5"
+		"@astrojs/svelte": "^7.0.1",
+		"@astrojs/vercel": "^8.0.1",
+		"@fontsource-variable/overpass": "^5.1.1",
+		"@fontsource-variable/playfair-display": "^5.1.0",
+		"@iconify-json/simple-icons": "^1.2.16",
+		"@iconify-json/tabler": "^1.2.13",
+		"astro": "^5.1.0",
+		"astro-icon": "^1.1.4",
+		"astro-themes": "^0.2.5",
+		"astro-typesafe-routes": "^2.0.10",
+		"sharp": "^0.33.5",
+		"svelte": "^5.15.0",
+		"tailwind-merge": "^2.5.5",
+		"wretch": "^2.11.0"
 	},
 	"devDependencies": {
-		"@haltcase/style": "6.2.1",
-		"@next/eslint-plugin-next": "15.0.3",
-		"@types/node": "^20.17.7",
-		"@types/react": "npm:types-react@19.0.0-rc.1",
-		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-		"eslint": "^8.57.1",
-		"postcss-flexbugs-fixes": "^5.0.2",
-		"postcss-preset-env": "^10.1.1",
-		"prettier": "^3.3.3",
+		"@haltcase/style": "7.0.0-canary.10",
+		"@tailwindcss/vite": "^4.0.0-beta.8",
+		"eslint": "^9.17.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.2.11",
+		"prettier": "^3.4.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-svelte": "^3.3.2",
+		"tailwindcss": "^4.0.0-beta.8",
 		"typescript": "^5.7.2"
 	},
 	"engines": {
-		"node": "20"
-	},
-	"pnpm": {
-		"overrides": {
-			"@types/react": "npm:types-react@19.0.0-rc.1",
-			"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-		}
+		"node": "22"
 	}
 }
