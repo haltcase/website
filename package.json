@@ -29,7 +29,7 @@
 		"astro": "^5.1.0",
 		"astro-icon": "^1.1.4",
 		"astro-themes": "^0.2.5",
-		"astro-typesafe-routes": "^2.0.10",
+		"astro-typesafe-routes": "^4.2.2",
 		"sharp": "^0.33.5",
 		"svelte": "^5.15.0",
 		"tailwind-merge": "^3.0.2",

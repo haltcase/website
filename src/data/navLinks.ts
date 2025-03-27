@@ -1,4 +1,4 @@
-import type { Route } from "astro-typesafe-routes";
+import type { Route } from "astro-typesafe-routes/path";
 
 export interface NavLinkData {
 	text: string;
