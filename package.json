@@ -11,7 +11,7 @@
 		"eslint:check": "eslint .",
 		"format": "eslint --fix . && prettier --write .",
 		"postinstall": "astro sync",
-		"lint": "pnpm eslint:check && pnpm prettier:check && typescript:check && pnpm build:check",
+		"lint": "pnpm eslint:check && pnpm prettier:check && pnpm typescript:check && pnpm build:check",
 		"prepare": "husky",
 		"prettier:check": "prettier --list-different .",
 		"start": "node ./dist/server/entry.mjs",
