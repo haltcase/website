@@ -13,7 +13,7 @@
 		"postinstall": "astro sync",
 		"lint": "pnpm eslint:check && pnpm prettier:check && pnpm typescript:check && pnpm build:check",
 		"prepare": "husky",
-		"prettier:check": "prettier --list-different .",
+		"prettier:check": "prettier --list-different . --ignore-path .gitignore --ignore-path .prettierignore.build",
 		"start": "node ./dist/server/entry.mjs",
 		"typescript:check": "tsc --noEmit"
 	},
