@@ -5,14 +5,15 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"build": "astro build",
+		"build": "pnpm lint && astro build",
+		"build:check": "astro check && svelte-check",
 		"dev": "astro dev",
 		"eslint:check": "eslint .",
 		"format": "eslint --fix . && prettier --write .",
 		"postinstall": "astro sync",
-		"lint": "pnpm eslint:check && pnpm prettier:check && typescript:check",
+		"lint": "pnpm eslint:check && pnpm prettier:check && pnpm typescript:check && pnpm build:check",
 		"prepare": "husky",
-		"prettier:check": "prettier --list-different .",
+		"prettier:check": "prettier --list-different . --ignore-path .gitignore --ignore-path .prettierignore.build",
 		"start": "node ./dist/server/entry.mjs",
 		"typescript:check": "tsc --noEmit"
 	},
@@ -20,34 +21,44 @@
 		"*": "prettier --ignore-unknown --write"
 	},
 	"dependencies": {
-		"@astrojs/svelte": "^7.0.1",
-		"@astrojs/vercel": "^8.0.1",
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/svelte": "^7.0.8",
+		"@astrojs/vercel": "^8.1.3",
 		"@fontsource-variable/overpass": "^5.1.1",
 		"@fontsource-variable/playfair-display": "^5.1.0",
 		"@iconify-json/simple-icons": "^1.2.16",
 		"@iconify-json/tabler": "^1.2.13",
-		"astro": "^5.1.0",
+		"astro": "^5.5.5",
 		"astro-icon": "^1.1.4",
 		"astro-themes": "^0.2.5",
-		"astro-typesafe-routes": "^2.0.10",
+		"astro-typesafe-routes": "^4.2.2",
 		"sharp": "^0.33.5",
 		"svelte": "^5.15.0",
-		"tailwind-merge": "^2.5.5",
+		"tailwind-merge": "^3.0.2",
 		"wretch": "^2.11.0"
 	},
 	"devDependencies": {
-		"@haltcase/style": "7.0.0-canary.10",
-		"@tailwindcss/vite": "^4.0.0-beta.8",
-		"eslint": "^9.17.0",
+		"@haltcase/style": "^7.2.2",
+		"@tailwindcss/vite": "^4.0.17",
+		"eslint": "9.23.0",
 		"husky": "^9.1.7",
-		"lint-staged": "^15.2.11",
-		"prettier": "^3.4.2",
+		"lint-staged": "^15.5.0",
+		"prettier": "^3.5.3",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-svelte": "^3.3.2",
-		"tailwindcss": "^4.0.0-beta.8",
-		"typescript": "^5.7.2"
+		"prettier-plugin-svelte": "^3.3.3",
+		"svelte-check": "^4.1.5",
+		"tailwindcss": "^4.0.17",
+		"typescript": "^5.8.2"
 	},
+	"packageManager": "pnpm@10.6.2",
 	"engines": {
 		"node": "22"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@parcel/watcher",
+			"esbuild",
+			"sharp"
+		]
 	}
 }

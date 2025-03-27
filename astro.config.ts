@@ -41,7 +41,6 @@ export default defineConfig({
 				]
 			}
 		}),
-		// @ts-expect-error package overwrites its own types with typegen
 		typesafeRoutes(),
 		svelte()
 	],

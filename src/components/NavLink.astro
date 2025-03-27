@@ -16,11 +16,11 @@ const isActive = pathname === target;
 
 <Link
 	class={cx([
-		"group px-8 inline-flex items-center justify-center no-underline transition",
-		"after:absolute after:h-[2px] after:top-9/10 after:left-0 after:bg-primary after:w-0 after:opacity-50 after:transition-all",
+		"group inline-flex items-center justify-center px-8 no-underline transition",
+		"after:bg-primary after:absolute after:top-9/10 after:left-0 after:h-[2px] after:w-0 after:opacity-50 after:transition-all",
 		"hover:after:left-1/20 hover:after:w-9/10 hover:after:opacity-100",
-		"outline-none focus-visible:text-primary focus-visible:bg-inherit focus-visible:ring-1 ring-inset ring-primary",
-		isActive && "after:opacity-50 after:w-1/2 after:left-1/4",
+		"focus-visible:text-primary ring-primary outline-none ring-inset focus-visible:bg-inherit focus-visible:ring-1",
+		isActive && "after:left-1/4 after:w-1/2 after:opacity-50",
 		className,
 		classes.root
 	])}

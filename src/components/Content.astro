@@ -21,8 +21,8 @@ const {
 
 <section
 	class={cx([
-		"w-full max-w-content mx-auto",
-		!isSeamless && "border border-border bg-bg-lighter",
+		"max-w-content mx-auto w-full",
+		!isSeamless && "border-border bg-bg-lighter border",
 		className,
 		classes.root
 	])}
@@ -31,10 +31,10 @@ const {
 	<section class={cx(["mb-5 min-h-28", classes.headingContainer])}>
 		<slot name="heading">
 			<div
-				class={cx(["flex justify-between items-center py-4", classes.heading])}
+				class={cx(["flex items-center justify-between py-4", classes.heading])}
 			>
 				<h1
-					class={cx(["font-medium text-[2rem] py-4 px-8", classes.headingText])}
+					class={cx(["px-8 py-4 text-[2rem] font-medium", classes.headingText])}
 				>
 					{headingText}
 				</h1>
@@ -48,7 +48,7 @@ const {
 
 	<article
 		class={cx(
-			"py-4 px-8 [&_p]:leading-6 [&_p]:first-of-type:mt-0 flex flex-col gap-4",
+			"flex flex-col gap-4 px-8 py-4 [&_p]:leading-6 [&_p]:first-of-type:mt-0",
 			classes.body
 		)}
 	>

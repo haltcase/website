@@ -11,7 +11,6 @@ const getProxyUrl = (request: Request) => {
 	return new URL(basePath, proxyUrl);
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const ALL: APIRoute = async ({ request }) => {
 	const proxyUrl = getProxyUrl(request);
 	const response = await fetch(proxyUrl.href, request);

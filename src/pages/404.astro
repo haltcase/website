@@ -4,7 +4,7 @@ import Content from "@/components/Content.astro";
 import Main from "@/components/Main.astro";
 import Layout from "@/layouts/Layout.astro";
 
-import { $path } from "astro-typesafe-routes";
+import { $path } from "astro-typesafe-routes/path";
 ---
 
 <Layout title="Not found">
@@ -20,7 +20,7 @@ import { $path } from "astro-typesafe-routes";
 		>
 			<p class="text-center">This page could not be found.</p>
 
-			<Button as="a" href={$path("/")}>home</Button>
+			<Button as="a" href={$path({ to: "/" })}>home</Button>
 		</Content>
 	</Main>
 </Layout>
