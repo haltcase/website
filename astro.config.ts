@@ -19,6 +19,11 @@ export default defineConfig({
 				access: "secret",
 				startsWith: "https://"
 			}),
+			STATS_URL_2: envField.string({
+				context: "server",
+				access: "secret",
+				startsWith: "https://"
+			}),
 			WEBSITE_GITHUB_TOKEN: envField.string({
 				context: "server",
 				access: "secret"
