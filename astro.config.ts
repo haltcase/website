@@ -3,7 +3,7 @@ import vercel from "@astrojs/vercel";
 import tailwind from "@tailwindcss/vite";
 import { defineConfig, envField } from "astro/config";
 import icon from "astro-icon";
-import typesafeRoutes from "astro-typesafe-routes";
+import typedLinks from "astro-typed-links";
 
 export default defineConfig({
 	output: "static",
@@ -46,7 +46,7 @@ export default defineConfig({
 				]
 			}
 		}),
-		typesafeRoutes(),
+		typedLinks(),
 		svelte()
 	],
 
