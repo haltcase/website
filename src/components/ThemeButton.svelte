@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cx, type WithClasses } from "@/lib/cx";
+	import { cx, type WithClasses } from "#/lib/cx";
 	import type { HTMLButtonAttributes, SVGAttributes } from "svelte/elements";
 	import ThemeToggle from "./ThemeToggle.svelte";
 	import { spin } from "./transitions/spin";

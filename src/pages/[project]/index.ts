@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 
-import { errorNotFound } from "@/lib/api/responses";
-import { fetchRepo } from "@/lib/services/github";
+import { errorNotFound } from "#/lib/api/responses";
+import { fetchRepo } from "#/lib/services/github";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const prerender = false;

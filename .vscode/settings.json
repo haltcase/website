@@ -7,7 +7,7 @@
 		"**/index.{astro,html,js,jsx,ts,tsx,md,mdx}": "${dirname}/${filename}"
 	},
 
-	"typescript.tsdk": "./node_modules/typescript/lib",
+	"js/ts.tsdk.path": "./node_modules/typescript/lib",
 
 	"tailwindCSS.classAttributes": [
 		"class",

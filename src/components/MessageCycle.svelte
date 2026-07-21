@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { MessageData, MessageList } from "@/data/skills";
-	import { cx, type WithClasses } from "@/lib/cx";
-	import { sleep } from "@/lib/sleep";
+	import type { MessageData, MessageList } from "#/data/skills";
+	import { cx, type WithClasses } from "#/lib/cx";
+	import { sleep } from "#/lib/sleep";
 	import { onMount } from "svelte";
 
 	interface MessageCycleProps

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type WithClasses, cx } from "@/lib/cx";
+	import { type WithClasses, cx } from "#/lib/cx";
 	import type { Snippet } from "svelte";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 

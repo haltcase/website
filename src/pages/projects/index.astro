@@ -1,13 +1,13 @@
 ---
-import Content from "@/components/Content.astro";
-import Main from "@/components/Main.astro";
-import ProjectCard from "@/components/ProjectCard.astro";
-import { socialLinks } from "@/data/socialLinks";
-import Layout from "@/layouts/Layout.astro";
-import type { RenderableProjectData } from "@/lib/services/github";
+import Content from "#/components/Content.astro";
+import Main from "#/components/Main.astro";
+import ProjectCard from "#/components/ProjectCard.astro";
+import { socialLinks } from "#/data/socialLinks";
+import Layout from "#/layouts/Layout.astro";
+import type { RenderableProjectData } from "#/lib/services/github";
 
 import { render } from "astro:content";
-import { getSelectedProjects } from "@/lib/services/github";
+import { getSelectedProjects } from "#/lib/services/github";
 
 const repos = await getSelectedProjects();
 

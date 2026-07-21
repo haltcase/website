@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 
-import { errorNotFound } from "@/lib/api/responses";
+import { errorNotFound } from "#/lib/api/responses";
 
 const destinations = {
 	"acct:haltcase@hachyderm.io":
