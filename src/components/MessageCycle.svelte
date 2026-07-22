@@ -4,8 +4,9 @@
 	import { sleep } from "#/lib/sleep";
 	import { onMount } from "svelte";
 
-	interface MessageCycleProps
-		extends WithClasses<"root" | "message" | "prefix" | "suffix" | "cursor"> {
+	interface MessageCycleProps extends WithClasses<
+		"root" | "message" | "prefix" | "suffix" | "cursor"
+	> {
 		/** List of messages to cycle through */
 		messages: MessageList;
 		/** Number of milliseconds between messages. */

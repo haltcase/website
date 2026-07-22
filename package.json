@@ -7,18 +7,16 @@
 	"scripts": {
 		"build": "pnpm lint && astro build",
 		"build:check": "astro check && svelte-check",
+		"check": "vp check",
 		"dev": "astro dev",
 		"eslint:check": "eslint .",
-		"format": "eslint --fix . && prettier --write .",
+		"format": "eslint --fix . && vp fmt",
 		"postinstall": "astro sync",
 		"lint": "pnpm eslint:check && pnpm prettier:check && pnpm typescript:check && pnpm build:check",
-		"prepare": "husky",
-		"prettier:check": "prettier --list-different .",
+		"prepare": "vp config",
+		"prettier:check": "vp fmt --check .",
 		"start": "node ./dist/server/entry.mjs",
 		"typescript:check": "tsc --noEmit"
-	},
-	"lint-staged": {
-		"*": "prettier --ignore-unknown --write"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.9",
@@ -41,14 +39,11 @@
 		"@haltcase/style": "^7.2.2",
 		"@tailwindcss/vite": "^4.3.3",
 		"eslint": "9.39.5",
-		"husky": "^9.1.7",
-		"lint-staged": "^15.5.0",
-		"prettier": "^3.9.5",
-		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-svelte": "^4.1.1",
 		"svelte-check": "^4.7.3",
 		"tailwindcss": "^4.3.3",
-		"typescript": "^6.0.3"
+		"typescript": "^6.0.3",
+		"vite": "catalog:",
+		"vite-plus": "catalog:"
 	},
 	"packageManager": "pnpm@11.15.1",
 	"engines": {
