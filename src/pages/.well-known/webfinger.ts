@@ -14,8 +14,7 @@ export const GET: APIRoute = ({ url, redirect }) => {
 		return redirect(destinations["acct:haltcase@hachyderm.io"]);
 	}
 
-	const destination =
-		destinations[resource as unknown as keyof typeof destinations];
+	const destination = destinations[resource as unknown as keyof typeof destinations];
 
 	if (!destination) {
 		return errorNotFound();

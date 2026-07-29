@@ -31,7 +31,7 @@
 		"tailwind-merge": "^3.6.0"
 	},
 	"devDependencies": {
-		"@haltcase/style": "^8.0.0",
+		"@haltcase/style": "^8.0.1",
 		"@tailwindcss/vite": "^4.3.3",
 		"svelte-check": "^4.7.4",
 		"tailwindcss": "^4.3.3",
@@ -39,15 +39,15 @@
 		"vite": "catalog:",
 		"vite-plus": "catalog:"
 	},
-	"packageManager": "pnpm@11.17.0",
-	"engines": {
-		"node": "24"
-	},
 	"devEngines": {
 		"packageManager": {
 			"name": "pnpm",
 			"version": "11.17.0",
 			"onFail": "download"
 		}
-	}
+	},
+	"engines": {
+		"node": "24"
+	},
+	"packageManager": "pnpm@11.17.0"
 }

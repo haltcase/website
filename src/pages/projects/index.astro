@@ -1,9 +1,9 @@
 ---
-import Content from "#/components/Content.astro";
-import Main from "#/components/Main.astro";
-import ProjectCard from "#/components/ProjectCard.astro";
-import { socialLinks } from "#/data/socialLinks";
-import Layout from "#/layouts/Layout.astro";
+import Content from "#/components/content.astro";
+import Main from "#/components/main.astro";
+import ProjectCard from "#/components/project-card.astro";
+import { socialLinks } from "#/data/social-links";
+import Layout from "#/layouts/layout.astro";
 import type { RenderableProjectData } from "#/lib/services/github";
 
 import { render } from "astro:content";
@@ -13,12 +13,11 @@ const repos = await getSelectedProjects();
 
 const withContent = (await Promise.all(
 	repos.map(async (repo) => {
-		const { Content } = await render(repo.entry);
+		const { Content: EntryContent } = await render(repo.entry);
 
-		return {
-			...repo,
-			Content
-		};
+		return Object.assign(repo, {
+			Content: EntryContent
+		});
 	})
 )) satisfies RenderableProjectData[];
 ---

@@ -1,7 +1,10 @@
 <script lang="ts">
-	import { cx, type WithClasses } from "#/lib/cx";
 	import type { HTMLButtonAttributes, SVGAttributes } from "svelte/elements";
-	import ThemeToggle from "./ThemeToggle.svelte";
+
+	import { cx } from "#/lib/cx";
+	import type { WithClasses } from "#/lib/cx";
+
+	import ThemeToggle from "./theme-toggle.svelte";
 	import { spin } from "./transitions/spin";
 
 	interface ThemeButtonProps extends WithClasses<"root", HTMLButtonAttributes> {
@@ -23,8 +26,7 @@
 			xmlns="http://www.w3.org/2000/svg"
 			width={iconSize}
 			height={iconSize}
-			viewBox="0 0 24 24"
-		>
+			viewBox="0 0 24 24">
 			{#if currentTheme === "dark"}
 				<!-- tabler:sun -->
 				<path
@@ -35,8 +37,7 @@
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					stroke-width="2"
-					d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"
-				/>
+					d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7" />
 			{:else}
 				<!-- tabler:moon-stars -->
 				<path
@@ -47,8 +48,7 @@
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					stroke-width="2"
-					d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992zm5 1a2 2 0 0 0 2 2a2 2 0 0 0-2 2a2 2 0 0 0-2-2a2 2 0 0 0 2-2m2 7h2m-1-1v2"
-				/>
+					d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992zm5 1a2 2 0 0 0 2 2a2 2 0 0 0-2 2a2 2 0 0 0-2-2a2 2 0 0 0 2-2m2 7h2m-1-1v2" />
 			{/if}
 		</svg>
 	{/snippet}

@@ -1,9 +1,9 @@
 import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel";
 import tailwind from "@tailwindcss/vite";
-import { defineConfig, envField } from "astro/config";
 import icon from "astro-icon";
 import typedLinks from "astro-typed-links";
+import { defineConfig, envField } from "astro/config";
 
 export default defineConfig({
 	output: "static",
@@ -35,15 +35,7 @@ export default defineConfig({
 		icon({
 			include: {
 				"simple-icons": ["bluesky", "github", "linkedin", "mastodon"],
-				tabler: [
-					"arrow-right",
-					"chevron-right",
-					"code",
-					"menu-2",
-					"mail-filled",
-					"star",
-					"world"
-				]
+				tabler: ["arrow-right", "chevron-right", "code", "menu-2", "mail-filled", "star", "world"]
 			}
 		}),
 		typedLinks(),

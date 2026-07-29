@@ -13,9 +13,7 @@ const getProxyUrl = (request: Request, statsDomain: string) => {
 
 export const ALL: APIRoute = async ({ request }) => {
 	const requestUrl = new URL(request.url);
-	const statsDomain = requestUrl.pathname.startsWith("/stats/api")
-		? STATS_URL_2
-		: STATS_URL;
+	const statsDomain = requestUrl.pathname.startsWith("/stats/api") ? STATS_URL_2 : STATS_URL;
 
 	const proxyUrl = getProxyUrl(request, statsDomain);
 	const response = await fetch(proxyUrl.href, request);

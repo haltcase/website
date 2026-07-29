@@ -1,8 +1,9 @@
 ---
-import type { NavLinkData } from "#/data/navLinks";
-import { cx, type WithClasses } from "#/lib/cx";
+import type { NavLinkData } from "#/data/nav-links";
+import { cx } from '#/lib/cx';
+import type { WithClasses } from '#/lib/cx';
 import { Icon } from "astro-icon/components";
-import Link from "./Link.astro";
+import Link from "./link.astro";
 
 interface Props
 	extends WithClasses<"root" | "before" | "icon" | "label", NavLinkData> {}
@@ -17,7 +18,7 @@ const isActive = pathname === target;
 <Link
 	class={cx([
 		"group inline-flex items-center justify-center px-8 no-underline transition",
-		"after:bg-primary after:absolute after:top-9/10 after:left-0 after:h-[2px] after:w-0 after:opacity-50 after:transition-all",
+		"after:bg-primary after:absolute after:top-9/10 after:left-0 after:h-0.5 after:w-0 after:opacity-50 after:transition-all",
 		"hover:after:left-1/20 hover:after:w-9/10 hover:after:opacity-100",
 		"focus-visible:text-primary ring-primary outline-none ring-inset focus-visible:bg-inherit focus-visible:ring-1",
 		isActive && "after:left-1/4 after:w-1/2 after:opacity-50",

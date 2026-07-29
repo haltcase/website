@@ -1,7 +1,8 @@
 import { basename } from "node:path";
 
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import { type CollectionEntry, getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { WEBSITE_GITHUB_TOKEN } from "astro:env/server";
 import ky from "ky";
 
@@ -38,9 +39,7 @@ export const fetchGithub = async <TReturn extends QueryResult>(
 			.json<TReturn>();
 
 		if (result.errors != null) {
-			process.stderr.write(
-				`${result.errors.map((it) => it.message).join("\n")}\n`
-			);
+			process.stderr.write(`${result.errors.map((it) => it.message).join("\n")}\n`);
 			return;
 		}
 
@@ -114,11 +113,7 @@ query($repoCount: Int!) {
 
 	const result = await fetchGithub<RepositoriesResult>(query, { repoCount });
 
-	return (
-		result?.data?.viewer.repositories.edges.map((edge) => ({
-			...edge.node
-		})) ?? []
-	);
+	return result?.data?.viewer.repositories.edges.map((edge) => edge.node) ?? [];
 };
 
 export const getSelectedProjects = async (): Promise<SelectedProjectData[]> => {
@@ -134,24 +129,18 @@ export const getSelectedProjects = async (): Promise<SelectedProjectData[]> => {
 
 	const withEntry = await Promise.all(
 		topRepos.map(async (repo) => {
-			const collectionId =
-				selectedProjects.find(({ name }) => name === repo.name)?.id || "";
+			const collectionId = selectedProjects.find(({ name }) => name === repo.name)?.id || "";
 
-			const entry = collectionId
-				? await getEntry("projects", collectionId)
-				: null;
+			const entry = collectionId ? await getEntry("projects", collectionId) : null;
 
-			return {
-				...repo,
+			return Object.assign(repo, {
 				collectionId,
 				entry
-			};
+			});
 		})
 	);
 
-	return withEntry.filter(
-		(repo) => repo.entry != null
-	) as SelectedProjectData[];
+	return withEntry.filter((repo) => repo.entry != null) as SelectedProjectData[];
 };
 
 interface RepositoryResult {
@@ -168,9 +157,7 @@ interface ViewerResult extends QueryResult {
 	};
 }
 
-export const fetchRepo = async (
-	name: string
-): Promise<RepositoryResult | undefined> => {
+export const fetchRepo = async (name: string): Promise<RepositoryResult | undefined> => {
 	const query = `
 query($name: String!) {
   viewer {

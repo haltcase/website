@@ -1,14 +1,11 @@
 <script lang="ts">
-	import { type WithClasses, cx } from "#/lib/cx";
 	import type { Snippet } from "svelte";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 
-	let {
-		class: className,
-		classes = {},
-		theme,
-		...rest
-	}: ThemeButtonProps = $props();
+	import { cx } from "#/lib/cx";
+	import type { WithClasses } from "#/lib/cx";
+
+	let { class: className, classes = {}, theme, ...rest }: ThemeButtonProps = $props();
 
 	type Theme = "dark" | "light";
 
@@ -16,16 +13,14 @@
 		theme: Snippet<[currentTheme: Theme]>;
 	}
 
-	let dataThemeValue =
-		document.documentElement.attributes.getNamedItem("data-theme")?.value;
+	let dataThemeValue = document.documentElement.attributes.getNamedItem("data-theme")?.value;
 
 	let currentTheme: Theme = $state(
 		dataThemeValue === "dark" ? ("dark" as const) : ("light" as const)
 	);
 
 	const toggleTheme = () => {
-		let value =
-			currentTheme === "dark" ? ("light" as const) : ("dark" as const);
+		let value = currentTheme === "dark" ? ("light" as const) : ("dark" as const);
 
 		document.dispatchEvent(new CustomEvent("set-theme", { detail: value }));
 		currentTheme = value;
@@ -40,7 +35,6 @@
 		classes.root
 	)}
 	title={`Switch to ${currentTheme === "dark" ? "light" : "dark"} mode`}
-	onclick={toggleTheme}
->
+	onclick={toggleTheme}>
 	{@render theme(currentTheme)}
 </button>

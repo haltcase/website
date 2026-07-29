@@ -1,8 +1,10 @@
 <script lang="ts">
-	import type { MessageData, MessageList } from "#/data/skills";
-	import { cx, type WithClasses } from "#/lib/cx";
-	import { sleep } from "#/lib/sleep";
 	import { onMount } from "svelte";
+
+	import type { MessageData, MessageList } from "#/data/skills";
+	import { cx } from "#/lib/cx";
+	import type { WithClasses } from "#/lib/cx";
+	import { sleep } from "#/lib/sleep";
 
 	interface MessageCycleProps extends WithClasses<
 		"root" | "message" | "prefix" | "suffix" | "cursor"
@@ -33,7 +35,7 @@
 	const getLinkTarget = (messageOrData: string | MessageData): string =>
 		typeof messageOrData === "string" ? "#" : (messageOrData.href ?? "#");
 
-	let {
+	const {
 		messages = [],
 		interval = 2000,
 		prefix = "",
@@ -55,7 +57,7 @@
 	let isPaused = $state(false);
 	let loop = $state(0);
 
-	let index = $derived(loop % messages.length);
+	const index = $derived(loop % messages.length);
 	const linkTarget = $derived(getLinkTarget(messages[index]));
 	const message = $derived(prefix + getMessage(messages[index]) + suffix);
 
@@ -99,8 +101,7 @@
 	}}
 	onmouseleave={() => {
 		isPaused = false;
-	}}
->
+	}}>
 	<!--
 	this formatting looks absolutely horrible, but we can't introduce whitespace
 	without breaking user intuition of spaces in the prefix or suffix text
@@ -108,7 +109,7 @@
 	<span class={cx("", classes.prefix)}>{staticPrefix}</span>{#if link === "#"}
 		<span class={cx(classes.message)}>{text}</span>
 	{:else}
-		<a class={cx(classes.message)} href={link}>{text}</a>{/if}<span
-		class={cx("", classes.suffix)}>{staticSuffix}</span
+		<a class={cx(classes.message)} href={link}>{text}</a>{/if}<span class={cx("", classes.suffix)}
+		>{staticSuffix}</span
 	><span class={cx(classes.cursor)}>{cursor}</span>
 </span>

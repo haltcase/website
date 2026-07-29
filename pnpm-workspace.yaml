@@ -6,6 +6,9 @@ catalog:
   vite: npm:@voidzero-dev/vite-plus-core@0.2.6
   vite-plus: 0.2.6
 
+minimumReleaseAgeExclude:
+  - "@haltcase/style@8.0.1-canary.1 || 8.0.1"
+
 overrides:
   vite: "catalog:"
 
