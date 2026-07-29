@@ -47,11 +47,12 @@
 		classes = {}
 	}: MessageCycleProps = $props();
 
-	let text = $state(getMessage(messages[0]));
-	let link = $state(getLinkTarget(messages[0]));
+	let text = $derived(getMessage(messages[0]));
+	let link = $derived(getLinkTarget(messages[0]));
+	let speed = $derived(typingSpeed);
+
 	let isDeleting = $state(false);
 	let isPaused = $state(false);
-	let speed = $state(typingSpeed);
 	let loop = $state(0);
 
 	let index = $derived(loop % messages.length);
