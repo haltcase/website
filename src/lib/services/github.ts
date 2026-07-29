@@ -3,9 +3,10 @@ import { basename } from "node:path";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import { type CollectionEntry, getCollection, getEntry } from "astro:content";
 import { WEBSITE_GITHUB_TOKEN } from "astro:env/server";
-import wretch from "wretch";
+import ky from "ky";
 
-const api = wretch("https://api.github.com/graphql", {
+const api = ky.create({
+	baseUrl: "https://api.github.com/graphql",
 	headers: {
 		Authorization: `bearer ${WEBSITE_GITHUB_TOKEN}`
 	}
@@ -28,9 +29,11 @@ export const fetchGithub = async <TReturn extends QueryResult>(
 ): Promise<TReturn | undefined> => {
 	try {
 		const result = await api
-			.post({
-				query: query.replaceAll(/\s+/g, " "),
-				variables
+			.post("", {
+				json: {
+					query: query.replaceAll(/\s+/g, " "),
+					variables
+				}
 			})
 			.json<TReturn>();
 
